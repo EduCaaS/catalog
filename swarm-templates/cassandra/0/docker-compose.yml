@@ -1,2 +1,0 @@
-cassandra:
-  image: cassandra:3.3

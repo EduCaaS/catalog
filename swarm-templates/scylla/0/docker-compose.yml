@@ -1,2 +1,0 @@
-scylla:
-  image: scylladb/scylla:1.0-rc2

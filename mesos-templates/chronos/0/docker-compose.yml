@@ -1,9 +1,0 @@
-chronos:
-  image: rancher/chronos:latest
-  environment:
-    ZK_SERVICE: Mesos/zookeeper
-    MESOS_SERVICE: Mesos/mesos-master
-    CHRONOS_HTTP_PORT: ${CHRONOS_HTTP_PORT}
-  ports:
-  - "${CHRONOS_HTTP_PORT}:${CHRONOS_HTTP_PORT}"
-  privileged: true

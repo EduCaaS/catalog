@@ -1,5 +1,0 @@
-name: Elasticsearch 2.x
-description: |
-  Elasticsearch, you know for search!
-version: 2.2.2-rancher1
-category: ELK

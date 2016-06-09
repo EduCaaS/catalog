@@ -1,7 +1,0 @@
-zk:
-  image: rancher/zookeeper:3.4.6-2
-  volumes:
-  - /opt/zk/data
-  environment:
-  - JVMFLAGS=-Xmx${zk_mem}m -Xms${zk_mem}m
-  - CONFD_INTERVAL=${zk_interval}
