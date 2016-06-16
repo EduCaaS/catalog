@@ -4,6 +4,7 @@
   description: "Library service powered by Owncloud"
   uuid: odoo-0
   minimum_rancher_version: v0.51.0
+  questions:
     - variable: client_port
       description: "Port to access Owncloud"
       label: "Client Port"
