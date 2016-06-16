@@ -4,5 +4,15 @@
   description: "ERP management powered by Odoo"
   uuid: odoo-0
   questions:
-
-odoo:
+    - variable: client_port
+      description: "Port to access Odoo"
+      label: "Client Port"
+      required: true
+      default: "8069"
+      type: "int"
+    - variable: db_password
+      description: "Password for database"
+      label: "Password (default: odoo)"
+      required: true
+      default: "odoo"
+      type: "password"

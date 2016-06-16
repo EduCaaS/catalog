@@ -1,7 +1,7 @@
 owncloud:
   image: owncloud
   ports:
-   - "80:80"
+   - ${client_port}:80
   links:
     - db
   environment:
