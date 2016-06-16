@@ -1,0 +1,16 @@
+db:
+  image: mysql
+  volumes:
+    - ./mysql/runtime:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: example
+
+app:
+  image: indiehosters/known
+  links:
+    - db
+  volumes:
+    - ./data:/var/www/html/Uploads
+  ports:
+    - 80:80
+
