@@ -12,5 +12,5 @@ app:
   volumes:
     - ./data:/var/www/html/Uploads
   ports:
-    - 80:80
+    - 9000:9000
 
