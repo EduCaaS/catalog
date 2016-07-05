@@ -1,0 +1,5 @@
+name: Wordpress
+description: |
+  Blog tool, publishing platform and CMS
+version: latest-rancher1
+category: Blogging

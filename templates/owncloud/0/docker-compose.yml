@@ -1,0 +1,4 @@
+owncloud:
+  image: owncloud
+  ports:
+   - ${client_port}:80

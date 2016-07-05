@@ -1,0 +1,9 @@
+.catalog:
+  name: "Known"
+  version: "v0.1-educaas"
+  description: "Social publishing platform. Your personal API"
+  uuid: ghost-0
+  minimum_rancher_version: v0.51.0
+  questions:
+
+known:
