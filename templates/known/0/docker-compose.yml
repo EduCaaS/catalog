@@ -18,6 +18,6 @@ known:
   ports:
   - "${client_port}:80"
   links:
-    - "mysql:mysql"
+    - "db:mysql"
 
 
