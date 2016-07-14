@@ -1,4 +1,4 @@
-db:
+mysql:
   image: mysql
   environment:
   - MYSQL_DATABASE=${db_name}
@@ -16,8 +16,8 @@ known:
   - MYSQL_USER=${db_user}
   - MYSQL_PASSWORD=${db_password}
   ports:
-  - "${client_port}:80"
+  - ${client_port}:80
   links:
-    - "db:mysql"
+    - mysql
 
 
