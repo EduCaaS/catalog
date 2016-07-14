@@ -1,16 +1,23 @@
 db:
   image: mysql
-  volumes:
-    - ./mysql/runtime:/var/lib/mysql
   environment:
-    MYSQL_ROOT_PASSWORD: example
+  - MYSQL_DATABASE=${db_name}
+  - MYSQL_USER=${db_user}
+  - MYSQL_PASSWORD=${db_password}
+  - MYSQL_ROOT_PASSWORD=${root_password}
 
-app:
-  image: indiehosters/known
-  links:
-    - db
+known:
+  image: davesgonechina/known
   volumes:
-    - ./data:/var/www/html/Uploads
+  - /var/lib/mysql
+  - /known/uploads
+  environment:
+  - MYSQL_DATABASE=${db_name}
+  - MYSQL_USER=${db_user}
+  - MYSQL_PASSWORD=${db_password}
   ports:
-    - 9000:9000
+  - "${client_port}:80"
+  links:
+    - "mysql:mysql"
+
 
