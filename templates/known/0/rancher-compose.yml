@@ -5,5 +5,27 @@
   uuid: ghost-0
   minimum_rancher_version: v0.51.0
   questions:
-
-known:
+  - variable: client_port
+    description: "Port to access Known"
+    label: "Client Port"
+    required: true
+    default: "8000"
+    type: "int"
+  - variable: db_password
+    description: "Password for database"
+    label: "Password (default: known)"
+    required: true
+    default: "known"
+    type: "password"
+  - variable: db_user
+    description: "User for database"
+    label: "User (default: known)"
+    required: true
+    default: "known"
+    type: "string"
+  - variable: db_name
+    description: "Name for database"
+    label: "DB Name (default: known)"
+    required: true
+    default: "known"
+    type: "string"
