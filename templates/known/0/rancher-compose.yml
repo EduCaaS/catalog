@@ -17,6 +17,12 @@
     required: true
     default: "known"
     type: "password"
+  - variable: root_password
+    description: "Password for database"
+    label: "Root Password (default: known)"
+    required: true
+    default: "known"
+    type: "password"
   - variable: db_user
     description: "User for database"
     label: "User (default: known)"
