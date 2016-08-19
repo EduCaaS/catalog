@@ -5,6 +5,9 @@
   uuid: cloudflare-0
   minimum_rancher_version: v0.51.0
   questions:
-
-
-wekan:
+  - variable: client_port
+    description: "Port to access Wekan"
+    label: "Client Port"
+    required: true
+    default: "8000"
+    type: "int"
