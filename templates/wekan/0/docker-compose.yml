@@ -15,4 +15,4 @@ wekan:
     - MONGO_URL=mongodb://wekandb/wekan
     - ROOT_URL=http://localhost:80
   ports:
-    - 80:80
+    - ${client_port}:80
