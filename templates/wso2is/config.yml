@@ -1,0 +1,5 @@
+name: Wso2 IS
+description: |
+  The first entreprise identity bus
+version: latest-rancher1
+category: Administration

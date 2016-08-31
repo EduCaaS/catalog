@@ -1,0 +1,7 @@
+wso2is:
+  image: dalareo/wso2is
+
+  ports:
+    - 9443:9443
+    - 9763:9763
+
