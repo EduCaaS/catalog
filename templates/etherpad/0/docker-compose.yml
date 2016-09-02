@@ -1,0 +1,5 @@
+wso2is:
+  image: dalareo/etherpad-docker
+
+  ports:
+    - ${client_port}:9001

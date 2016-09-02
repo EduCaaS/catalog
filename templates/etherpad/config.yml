@@ -1,0 +1,5 @@
+name: Etherpad
+description: |
+  Online editor providing collaborative editing in real-time.
+version: v0.1-educaas
+category: Text-editor

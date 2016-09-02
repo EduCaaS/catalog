@@ -1,0 +1,13 @@
+.catalog:
+  name: "Etherpad"
+  version: v0.1-educaas
+  description: "Online editor providing collaborative editing in real-time"
+  minimum_rancher_version: v1.0.0-rc2
+  questions:
+    - variable: client_port
+      description: "Port to access Etherpad"
+      label: "Client Port"
+      required: true
+      default: "9001"
+      type: "int"
+
