@@ -1,17 +1,8 @@
-data:
-  image: tianon/true
-  volumes:
-    - /var/lib/postgresql/data
-    - /usr/local/taiga/media
-    - /usr/local/taiga/static
-    - /usr/local/taiga/logs
 db:
   image: postgres
   environment:
     POSTGRES_USER: taiga
     POSTGRES_PASSWORD: password
-  volumes_from:
-    - data
 taigaback:
   image: htdvisser/taiga-back:stable
   hostname: ${hostname}
@@ -24,14 +15,10 @@ taigaback:
     EMAIL_HOST_PASSWORD: ${gmail_password}
   links:
     - db:postgres
-  volumes_from:
-    - data
 taigafront:
   image: htdvisser/taiga-front-dist:stable
   hostname: ${hostname}
   links:
     - taigaback
-  volumes_from:
-    - data
   ports:
     - ${client_port}:80
