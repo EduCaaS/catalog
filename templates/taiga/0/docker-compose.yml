@@ -6,13 +6,13 @@ taigaback:
     links:
         - postgres:postgres
     ports:
-        - "8000:8000"
+        - "${backend_port}:8000"
 
 taigafront:
     image: ipedrazas/taiga-front
     links:
         - taigaback:taiga-back
     ports:
-        - "80:80"
+        - "${frontend_port}:80"
     environment:
-        - "API_NAME=boot2docker"
+        - "API_NAME=${domain}"
