@@ -1,18 +1,37 @@
-postgres:
-    image: postgres
-
+data:
+  image: tianon/true
+  volumes:
+    - /var/lib/postgresql/data
+    - /usr/local/taiga/media
+    - /usr/local/taiga/static
+    - /usr/local/taiga/logs
+db:
+  image: postgres
+  environment:
+    POSTGRES_USER: taiga
+    POSTGRES_PASSWORD: password
+  volumes_from:
+    - data
 taigaback:
-    image: ipedrazas/taiga-back
-    links:
-        - postgres:postgres
-    ports:
-        - "${backend_port}:8000"
-
+  image: htdvisser/taiga-back:stable
+  hostname: ${hostname}
+  environment:
+    SECRET_KEY: ${secret_key}
+    EMAIL_USE_TLS: 'True'
+    EMAIL_HOST: smtp.gmail.com
+    EMAIL_PORT: 587
+    EMAIL_HOST_USER: ${gmail_user}
+    EMAIL_HOST_PASSWORD: ${gmail_password}
+  links:
+    - db:postgres
+  volumes_from:
+    - data
 taigafront:
-    image: ipedrazas/taiga-front
-    links:
-        - taigaback:taiga-back
-    ports:
-        - "${frontend_port}:80"
-    environment:
-        - "API_NAME=${domain}"
+  image: htdvisser/taiga-front-dist:stable
+  hostname: ${hostname}
+  links:
+    - taigaback
+  volumes_from:
+    - data
+  ports:
+    - 0.0.0.0:${client_port}:80
