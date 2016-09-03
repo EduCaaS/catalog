@@ -5,6 +5,21 @@
   uuid: taiga-0
   minimum_rancher_version: v0.51.0
   questions:
-
-
-taiga:
+    - variable: backend_port
+      description: "Taiga backend port"
+      label: "Backend Port"
+      required: true
+      default: "8000"
+      type: "int"
+    - variable: frontend_port
+      description: "Taiga frontend port"
+      label: "Frontend Port"
+      required: true
+      default: "8000"
+      type: "int"
+    - variable: domain
+      description: "Taiga API endpoint"
+      label: "Taiga domain or IP"
+      required: true
+      default: "loalhost"
+      type: "string"
