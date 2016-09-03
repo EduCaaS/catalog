@@ -5,21 +5,33 @@
   uuid: taiga-0
   minimum_rancher_version: v0.51.0
   questions:
-    - variable: backend_port
-      description: "Taiga backend port"
-      label: "Backend Port"
+    - variable: client_port
+      description: "Taiga port"
+      label: "Port"
       required: true
       default: "8000"
       type: "int"
-    - variable: frontend_port
-      description: "Taiga frontend port"
-      label: "Frontend Port"
-      required: true
-      default: "8000"
-      type: "int"
-    - variable: domain
+    - variable: hostname
       description: "Taiga API endpoint"
       label: "Taiga domain or IP"
       required: true
       default: "localhost"
+      type: "string"
+    - variable: gmail_user
+      description: "Credentials to send mail"
+      label: "Gmail User"
+      required: true
+      default: "user@gmail.com"
+      type: "string"
+    - variable: gmail_password
+      description: "Credentials to send mail"
+      label: "Gmail Password"
+      required: true
+      default: "password"
+      type: "string"  
+    - variable: secret_key
+      description: "Taiga secret key"
+      label: "Secret Key"
+      required: true
+      default: "examplesecretkey"
       type: "string"
