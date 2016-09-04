@@ -27,7 +27,7 @@
       description: "SMTP server"
       label: "SMTP host address"
       required: true
-      default: "user@gmail.com"
+      default: "smtp.hostname.com"
       type: "string"
     - variable: smtp_user
       description: "Credentials to send mail"
