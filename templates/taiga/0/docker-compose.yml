@@ -15,10 +15,12 @@ taigaback:
     EMAIL_HOST_PASSWORD: ${gmail_password}
   links:
     - db:postgres
+  ports:
+    - ${backend_port}:8000
 taigafront:
   image: htdvisser/taiga-front-dist:stable
   hostname: ${hostname}
   links:
     - taigaback
   ports:
-    - ${client_port}:80
+    - ${frontend_port}:80
