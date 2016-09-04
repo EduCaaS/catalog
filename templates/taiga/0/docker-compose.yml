@@ -9,10 +9,10 @@ taigaback:
   environment:
     SECRET_KEY: ${secret_key}
     EMAIL_USE_TLS: 'True'
-    EMAIL_HOST: smtp.gmail.com
+    EMAIL_HOST: ${smtp_host}
     EMAIL_PORT: 587
-    EMAIL_HOST_USER: ${gmail_user}
-    EMAIL_HOST_PASSWORD: ${gmail_password}
+    EMAIL_HOST_USER: ${smtp_user}
+    EMAIL_HOST_PASSWORD: ${smtp_password}
   links:
     - db:postgres
   ports:
