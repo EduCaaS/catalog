@@ -11,12 +11,6 @@
       required: true
       default: "80"
       type: "int"
-    - variable: backend_port
-      description: "Taiga backend port"
-      label: "Backend Port"
-      required: true
-      default: "8000"
-      type: "int"
     - variable: hostname
       description: "Taiga API endpoint"
       label: "Taiga domain or IP"
