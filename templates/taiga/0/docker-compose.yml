@@ -1,24 +1,37 @@
-db:
+postgres:
   image: postgres
   environment:
+    POSTGRES_DB: taiga
     POSTGRES_USER: taiga
     POSTGRES_PASSWORD: password
-taigaback:
-  image: htdvisser/taiga-back:stable
-  hostname: ${hostname}
-  environment:
-    SECRET_KEY: ${secret_key}
-    EMAIL_USE_TLS: 'True'
-    EMAIL_HOST: ${smtp_host}
-    EMAIL_PORT: 587
-    EMAIL_HOST_USER: ${smtp_user}
-    EMAIL_HOST_PASSWORD: ${smtp_password}
-  links:
-    - db:postgres
-taigafront:
-  image: htdvisser/taiga-front-dist:stable
-  hostname: ${hostname}
-  links:
-    - taigaback
+  # volumes:
+    # - ./database:/var/lib/postgresql/data
+
+taiga:
+  image: dalareo/taiga
   ports:
-    - ${frontend_port}:80
+    - 80:80
+    # - 443:443 # To enable SSL, uncomment this line
+  links:
+    - postgres
+  environment:
+    TAIGA_HOSTNAME: ${hostname}
+    # TAIGA_SSL: 'true' # To enable SSL, uncomment this line
+
+    TAIGA_DB_HOST: postgres
+    TAIGA_DB_NAME: taiga
+    TAIGA_DB_USER: taiga
+    TAIGA_DB_PASSWORD: password
+    
+    TAIGA_SECRET_KEY: ${secret_key}
+
+    EMAIL_BACKEND = django.core.mail.backends.smtp.EmailBackend
+    EMAIL_USE_TLS = "True"
+    EMAIL_HOST = ${smtp_host}
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = ${smtp_user}
+    EMAIL_HOST_PASSWORD = ${smtp_password}
+
+  # volumes:
+    # - ./media:/usr/src/taiga-back/media
+    # - ./taiga-conf:/taiga
