@@ -15,6 +15,8 @@ taiga:
   links:
     - postgres
   environment:
+  
+    TAIGA_SLEEP=30
     TAIGA_HOSTNAME: ${hostname}
     # TAIGA_SSL: 'true' # To enable SSL, uncomment this line
 
