@@ -5,7 +5,7 @@
   uuid: taiga-0
   minimum_rancher_version: v0.51.0
   questions:
-    - variable: frontend_port
+    - variable: port
       description: "Taiga frontend port"
       label: "Port"
       required: true
@@ -27,7 +27,7 @@
       description: "Credentials to send mail"
       label: "SMTP User"
       required: true
-      default: "user@gmail.com"
+      default: "user@domain.com"
       type: "string"
     - variable: smtp_password
       description: "Credentials to send mail"
