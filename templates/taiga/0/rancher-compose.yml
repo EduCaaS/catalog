@@ -41,3 +41,9 @@
       required: true
       default: "examplesecretkey"
       type: "string"
+    - variable: default_email
+      description: "Emails sent from this account"
+      label: "Default email address"
+      required: true
+      default: "user@domain.com"
+      type: "string"
