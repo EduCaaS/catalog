@@ -33,6 +33,8 @@ taiga:
     EMAIL_PORT: 587
     EMAIL_HOST_USER: ${smtp_user}
     EMAIL_HOST_PASSWORD: ${smtp_password}
+    
+    DEFAULT_FROM_EMAIL: ${default_email}
 
   # volumes:
     # - ./media:/usr/src/taiga-back/media
