@@ -2,7 +2,7 @@ gitlab:
   image: 'gitlab/gitlab-ce:latest'
   restart: always
   hostname: ${gitlab_hostname}
-  environment:
+  # environment:
     # GITLAB_OMNIBUS_CONFIG: |
       # external_url 'URL'
       # Add any other gitlab.rb configuration here, each on its own line
