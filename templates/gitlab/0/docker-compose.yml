@@ -1,16 +1,22 @@
-gitlab:
-  image: 'gitlab/gitlab-ce:latest'
-  restart: always
-  hostname: ${gitlab_hostname}
-  # environment:
-    # GITLAB_OMNIBUS_CONFIG: |
-      # external_url 'URL'
-      # Add any other gitlab.rb configuration here, each on its own line
+gitlab-server:
   ports:
-    - ${http_port}:80
-    - ${https_port}:443
-    - ${ssh_port}:22
-  # volumes:
-    # - '/srv/gitlab/config:/etc/gitlab'
-    # - '/srv/gitlab/logs:/var/log/gitlab'
-    # - '/srv/gitlab/data:/var/opt/gitlab'
+  - ${ssh_port}:22
+  - ${http_port}:80
+  labels:
+    io.rancher.sidekicks: gitlab-data
+  hostname: ${gitlab_hostname}
+  image: gitlab/gitlab-ce:latest
+  volumes_from:
+  - gitlab-data
+
+gitlab-data:
+  labels:
+    io.rancher.container.start_once: 'true'
+  entrypoint:
+  - /bin/true
+  hostname: gitdata
+  image: gitlab/gitlab-ce:latest
+  volumes:
+  - /etc/gitlab
+  - /var/log/gitlab
+  - /var/opt/gitlab
