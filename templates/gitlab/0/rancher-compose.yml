@@ -19,12 +19,6 @@
       required: true
       default: "80"
       type: "int"
-    - variable: "https_port"
-      description: "Public secure port"
-      label: "HTTPS port"
-      required: true
-      default: "443"
-      type: "int"
     - variable: "ssh_port"
       description: "SSH connections port"
       label: "SSH port"
