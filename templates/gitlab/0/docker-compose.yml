@@ -14,7 +14,7 @@
   gitlab:
     restart: always
     image: sameersbn/gitlab:8.11.4
-    depends_on:
+    links:
     - redis
     - postgresql
     ports:
