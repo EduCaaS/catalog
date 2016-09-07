@@ -1,5 +1,5 @@
 .catalog:
-  name: Gitlab Community
+  name: Gitlab
   version: 0.1
   description: |
     Gitlab CE is a free GitHub alternative
