@@ -2,7 +2,7 @@
   name: "GlusterFS"
   version: v0.1-educaas
   description: "Gluster FS (3x) replicated volume"
-  uuid: glusterfs-0
+  minimum_rancher_version: v1.0.0-rc2
   questions:
     - variable: "VOLUME_NAME"
       description: "Name to give the Gluster volume"
@@ -10,7 +10,9 @@
       required: true
       default: "my_vol"
       type: "string"
+
 glusterfs-server:
   scale: 3
   metadata:
     volume_name: "${VOLUME_NAME}"
+
