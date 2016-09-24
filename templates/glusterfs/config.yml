@@ -1,0 +1,5 @@
+name: GlusterFS
+description: |
+  GlusterFS is a scalable network filesystem.
+version: v0.1-educaas
+category: Storage cluster
