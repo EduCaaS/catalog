@@ -1,0 +1,5 @@
+name: Kanboard
+description: |
+  Kanboard is a project management software that uses the Kanban methodology.
+version: v0.1-educaas
+category: Agile
