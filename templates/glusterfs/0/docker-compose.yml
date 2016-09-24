@@ -5,10 +5,10 @@ glusterfs-server:
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: glusterfs-daemon,glusterfs-data,glusterfs-volume-create
-  command: giddyup leader elect --proxy-tcp-port=2160 /opt/rancher/peerprobe.sh ${network_mode}
+  command: giddyup leader elect --proxy-tcp-port=2160 /opt/rancher/peerprobe.sh
 glusterfs-daemon:
   image: rancher/glusterfs:v0.2.1
-  net: ${network_mode}
+  net: 'container:glusterfs-server'
   cap_add:
     - SYS_ADMIN
   volumes_from:
@@ -21,7 +21,7 @@ glusterfs-daemon:
   command: glusterd -p /var/run/gluster.pid --no-daemon --log-file=-
 glusterfs-volume-create:
   image: rancher/glusterfs:v0.2.1
-  command: /opt/rancher/replicated_volume_create.sh ${network_mode}
+  command: /opt/rancher/replicated_volume_create.sh
   net: 'container:glusterfs-server'
   volumes_from:
     - glusterfs-data
