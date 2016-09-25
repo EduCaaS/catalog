@@ -13,6 +13,6 @@ ep_mysql:
   restart: always
   image: mysql
   environment:
-    - MYSQL_ROOT_PASSWORD=${admin_pswd}
+    - MYSQL_ROOT_PASSWORD=${root_pswd}
 #  volumes_from:
 #    - etherpad_data
