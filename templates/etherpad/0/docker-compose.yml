@@ -1,18 +1,17 @@
-etherpad:
-  restart: always
-  image: tvelocity/etherpad-lite
-  ports:
-    - ${client_port}:9001
-  links:
-    - ep_mysql:mysql
-  environment:
-    ETHERPAD_TITLE: ${title}
-    ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
-    ETHERPAD_SESSION_KEY: ${session_key}
-ep_mysql:
-  restart: always
-  image: mysql
+db:
+  image: mariadb
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
 #  volumes_from:
 #    - etherpad_data
+
+etherpad:
+  image: tvelocity/etherpad-lite
+  ports:
+    - ${client_port}:9001
+  links:
+    - db:mysql
+  environment:
+    ETHERPAD_TITLE: ${title}
+    ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
+    ETHERPAD_SESSION_KEY: ${session_key}
