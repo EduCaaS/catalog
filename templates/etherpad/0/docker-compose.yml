@@ -14,5 +14,5 @@ ep_mysql:
   image: mysql
   environment:
     - MYSQL_ROOT_PASSWORD=${admin_pswd}
-  volumes_from:
-    - etherpad_data
+#  volumes_from:
+#    - etherpad_data
