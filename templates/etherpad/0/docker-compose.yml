@@ -6,13 +6,13 @@ etherpad:
   links:
     - ep_mysql:mysql
   environment:
-    - ETHERPAD_TITLE=${title}
-    - ETHERPAD_ADMIN_PASSWORD=${admin_pswd}
-    - ETHERPAD_SESSION_KEY=${session_key}
+#    - ETHERPAD_TITLE=${title}
+#    - ETHERPAD_ADMIN_PASSWORD=${admin_pswd}
+#    - ETHERPAD_SESSION_KEY=${session_key}
 ep_mysql:
   restart: always
   image: mysql
   environment:
-    - MYSQL_ROOT_PASSWORD=${root_pswd}
+    - MYSQL_ROOT_PASSWORD
 #  volumes_from:
 #    - etherpad_data
