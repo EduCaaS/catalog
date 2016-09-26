@@ -5,6 +5,9 @@ db:
 #  volume_driver: convoy-nfs
   volumes:
     - etherpad_db:/var/lib/mysql
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
 
 etherpad:
   image: tvelocity/etherpad-lite
@@ -16,3 +19,6 @@ etherpad:
     ETHERPAD_TITLE: ${title}
     ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
     ETHERPAD_SESSION_KEY: ${session_key}
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
