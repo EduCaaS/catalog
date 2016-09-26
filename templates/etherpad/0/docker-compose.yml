@@ -1,6 +1,6 @@
 lb:
   ports:
-  - 80:9001
+  - 80
   image: rancher/load-balancer-service
   links:
   - etherpad:etherpad
