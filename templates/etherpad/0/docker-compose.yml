@@ -2,7 +2,7 @@ db:
   image: mariadb
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
-  volume_driver: convoy-nfs
+#  volume_driver: convoy-nfs
   volumes:
     - etherpad_db:/var/lib/mysql
 
