@@ -1,5 +1,5 @@
 wso2is:
-  image: dalareo/wso2is:5.2.0-beta
+  image: dalareo/wso2is:5.2.0
 
   ports:
     - 9443:9443
