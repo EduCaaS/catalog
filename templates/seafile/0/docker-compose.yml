@@ -1,0 +1,19 @@
+seafile:
+  image: dalareo/seafile
+  ports:
+#    - 10001:10001
+#    - 12001:12001
+    - ${client_port}:8000
+#    - 8080:8080
+#    - 8082:8082
+  links:
+    - data
+  volumes_from:
+    - data
+  environment:
+    AUTOSTART: 'true'
+
+data:
+  image: dalareo/seafile-data
+  volumes:
+    - seafile_data:/opt/seafile
