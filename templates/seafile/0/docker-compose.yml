@@ -21,7 +21,7 @@ seafile:
 
 data:
   tty: true
-    command:
+  command:
     - cat
   image: dalareo/seafile-data
   stdin_open: true
