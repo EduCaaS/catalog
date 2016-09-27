@@ -9,5 +9,11 @@
       description: "Port to access Seafile"
       label: "Client Port"
       required: true
-      default: "8070"
+      default: "8000"
+      type: "int"
+    - variable: file_port
+      description: "Port to access Seafile files"
+      label: "Files Port"
+      required: true
+      default: "8082"
       type: "int"
