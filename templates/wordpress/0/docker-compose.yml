@@ -1,10 +1,22 @@
 wordpress:
   image: wordpress
   links:
-    - db:mysql
+    - database:mysql
   ports:
     - ${client_port}:80
-db:
-  image: mariadb
+#  volume_driver: convoy-nfs
+  volumes:
+    - wp_files:/var/www/html
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+database:
+  image: mysql
   environment:
     MYSQL_ROOT_PASSWORD: ${db_password}
+#  volume_driver: convoy-nfs
+  volumes:
+    - wp_db:/var/lib/mysql
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal 

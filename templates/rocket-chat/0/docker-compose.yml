@@ -1,14 +1,28 @@
+# lb:
+#  ports:
+#  - 80:80
+#  image: rancher/load-balancer-service
+#  links:
+#  - rocketchat:rocketchat
+#  labels:
+    # Put load balancer containers only on hosts without label availability=temporal
+#    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    # Requests to http://app.example.com/foo:80 should be routed to web1 over port 8000
+    # io.rancher.loadbalancer.target.etherpad: rocketchat.educaas.io:80=3000
 mongo:
   image: mongo
-# volumes:
-#    - ./data/runtime/db:/data/db
-#    - ./data/dump:/dump
+  volumes:
+     - rc_db:/data/db
+     - rc_db_dump:/dump
   command: mongod --smallfiles --oplogSize 128
+  labels:
+    # Put load balancer containers only on hosts without label availability=temporal
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
 
 rocketchat:
   image: rocketchat/rocket.chat:latest
-# volumes:
-#    - ./uploads:/app/uploads
+  volumes:
+     - rc_uploads:/app/uploads
   environment:
     - PORT=3000
     - ROOT_URL=http://yourhost:3000
@@ -17,6 +31,9 @@ rocketchat:
     - mongo:mongo
   ports:
     - 3000:3000
+  labels:
+    # Put load balancer containers only on hosts without label availability=temporal
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
 
 # hubot, the popular chatbot (add the bot user first and change the password before starting this image)
 hubot:
@@ -34,3 +51,6 @@ hubot:
 # this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier
   ports:
     - 3001:8080
+  labels:
+    # Put load balancer containers only on hosts without label availability=temporal
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal

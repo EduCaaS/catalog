@@ -1,10 +1,24 @@
+# lb:
+#  ports:
+#  - 80:80
+#  image: rancher/load-balancer-service
+#  links:
+#  - etherpad:etherpad
+#  labels:
+    # Put load balancer containers only on hosts without label availability=temporal
+#    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    # Requests to http://app.example.com/foo:80 should be routed to web1 over port 8000
+#    io.rancher.loadbalancer.target.etherpad: etherpad.educaas.io:80=9001
 db:
   image: mariadb
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
-  volume_driver: convoy-nfs
+#  volume_driver: convoy-nfs
   volumes:
     - etherpad_db:/var/lib/mysql
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
 
 etherpad:
   image: tvelocity/etherpad-lite
@@ -16,3 +30,6 @@ etherpad:
     ETHERPAD_TITLE: ${title}
     ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
     ETHERPAD_SESSION_KEY: ${session_key}
+  labels:
+    # Make db only run on hosts that do not have a availability=temporal label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
