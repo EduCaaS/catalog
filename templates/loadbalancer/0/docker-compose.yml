@@ -4,16 +4,16 @@
    image: rancher/load-balancer-service
    external_links:
    - {$stack_1}/{$service_1}:{$service_1}
-   - {$stack_2}/{$service_2}:{$service_2}
-   - {$stack_3}/{$service_3}:{$service_3}
-   - {$stack_4}/{$service_4}:{$service_4}
-   - {$stack_5}/{$service_5}:{$service_5}
+#   - {$stack_2}/{$service_2}:{$service_2}
+#   - {$stack_3}/{$service_3}:{$service_3}
+#   - {$stack_4}/{$service_4}:{$service_4}
+#   - {$stack_5}/{$service_5}:{$service_5}
    labels:
     # Put load balancer containers only on hosts without label availability=temporal
      io.rancher.scheduler.affinity:host_label_ne: availability=temporal
     # Requests to http://app.example.com/foo:80 should be routed to web1 over port 8000
      io.rancher.loadbalancer.target.{$stack_1}/{$service_1}: {$subdomain_1}.{$hostname}:80={$port_1}
-     io.rancher.loadbalancer.target.{$stack_2}/{$service_2}: {$subdomain_2}.{$hostname}:80={$port_2}
-     io.rancher.loadbalancer.target.{$stack_3}/{$service_3}: {$subdomain_3}.{$hostname}:80={$port_3}
-     io.rancher.loadbalancer.target.{$stack_4}/{$service_4}: {$subdomain_4}.{$hostname}:80={$port_4}
-     io.rancher.loadbalancer.target.{$stack_5}/{$service_5}: {$subdomain_5}.{$hostname}:80={$port_5}
+#     io.rancher.loadbalancer.target.{$stack_2}/{$service_2}: {$subdomain_2}.{$hostname}:80={$port_2}
+#     io.rancher.loadbalancer.target.{$stack_3}/{$service_3}: {$subdomain_3}.{$hostname}:80={$port_3}
+#     io.rancher.loadbalancer.target.{$stack_4}/{$service_4}: {$subdomain_4}.{$hostname}:80={$port_4}
+#     io.rancher.loadbalancer.target.{$stack_5}/{$service_5}: {$subdomain_5}.{$hostname}:80={$port_5}
