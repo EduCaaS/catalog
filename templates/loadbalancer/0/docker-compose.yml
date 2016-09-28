@@ -3,7 +3,7 @@
    - 80:80
    image: rancher/load-balancer-service
    external_links:
-   - {$stack_1}/{$service_1}
+   - etherpad/etherpad:etherpad
 #   - {$stack_2}/{$service_2}:{$service_2}
 #   - {$stack_3}/{$service_3}:{$service_3}
 #   - {$stack_4}/{$service_4}:{$service_4}
