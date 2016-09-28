@@ -4,7 +4,7 @@ postgres:
     POSTGRES_DB: taiga
     POSTGRES_USER: taiga
     POSTGRES_PASSWORD: password
-  volume_driver: convoy-nfs
+# volume_driver: convoy-nfs
   volumes:
     - taiga_db:/var/lib/postgresql/data
   labels:
@@ -40,7 +40,7 @@ taiga:
     
     DEFAULT_FROM_EMAIL: ${default_email}
 
-  volume_driver: convoy-nfs
+# volume_driver: convoy-nfs
   volumes:
     - taiga_media:/usr/src/taiga-back/media
     - taiga-conf:/taiga
