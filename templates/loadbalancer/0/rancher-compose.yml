@@ -4,6 +4,12 @@
   description: "Workload distribution and hostname assignment"
   minimum_rancher_version: v1.0.0-rc2
   questions:
+    - variable: hostname
+      description: "Your domain"
+      label: "Domain of your installation (default: educaas.io)"
+      required: true
+      default: "educaas.io"
+      type: "string"
     - variable: stack_1
       description: "External stack"
       label: "Stack of this service (default: etherpad)"
