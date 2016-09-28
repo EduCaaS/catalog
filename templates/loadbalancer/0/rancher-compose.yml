@@ -22,6 +22,12 @@
       required: true
       default: "etherpad"
       type: "string"
+    - variable: service_int_1
+      description: "Internal Service"
+      label: "Internal name of this service (default: etherpad)"
+      required: true
+      default: "etherpad"
+      type: "string"
     - variable: subdomain_1
       description: "Subdomain"
       label: "Subdomain to this service (default: etherpad)"
