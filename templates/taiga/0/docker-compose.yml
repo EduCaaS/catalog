@@ -4,8 +4,9 @@ postgres:
     POSTGRES_DB: taiga
     POSTGRES_USER: taiga
     POSTGRES_PASSWORD: password
-  # volumes:
-    # - ./database:/var/lib/postgresql/data
+  volume_driver: convoy-nfs
+  volumes:
+    - taiga_db:/var/lib/postgresql/data
 
 taiga:
   image: dalareo/taiga
@@ -36,6 +37,7 @@ taiga:
     
     DEFAULT_FROM_EMAIL: ${default_email}
 
-  # volumes:
-    # - ./media:/usr/src/taiga-back/media
-    # - ./taiga-conf:/taiga
+  volume_driver: convoy-nfs
+  volumes:
+    - taiga_media:/usr/src/taiga-back/media
+    - taiga-conf:/taiga
