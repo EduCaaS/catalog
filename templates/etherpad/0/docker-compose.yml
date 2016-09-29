@@ -15,7 +15,6 @@
    volume_driver: convoy-nfs
    volumes:
      - etherpad_db:/var/lib/mysql
-     - etherpad_settings:/opt/etherpad_lite/var
  
  etherpad:
    tty: true
