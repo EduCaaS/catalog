@@ -1,19 +1,19 @@
-etherpad_db:
-   image: mysql
-   volumes:
-     - eth_db:/var/lib/mysql
-   environment:
-     MYSQL_ROOT_PASSWORD: ${root_pswd}
-
 etherpad:
    image: tvelocity/etherpad-lite
    ports:
      - ${client_port}:9001
    links:
-     - etherpad_db:mysql
+     - db:mysql
    environment:
      ETHERPAD_TITLE: ${title}
      ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
      ETHERPAD_SESSION_KEY: ${session_key}
    labels:
      io.rancher.scheduler.affinity:host_label: availability=permanent
+
+db:
+   image: mysql
+   volumes:
+     - eth_db:/var/lib/mysql
+   environment:
+     MYSQL_ROOT_PASSWORD: ${root_pswd}
