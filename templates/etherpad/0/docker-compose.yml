@@ -6,7 +6,7 @@ etherpad:
      - ${client_port}:9001
    links:
      - db:mysql
-   volulmes:
+   volumes:
       - etherpad_settings:/opt/etherpad_lite/var
    environment:
      ETHERPAD_TITLE: ${title}
