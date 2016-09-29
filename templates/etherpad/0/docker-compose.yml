@@ -5,31 +5,24 @@ etherpad:
    ports:
      - ${client_port}:9001
    links:
-     - db:mysql
+     - db_data:mysql
    volumes_from:
-     - data
+     - db_data
    environment:
      ETHERPAD_TITLE: ${title}
      ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
      ETHERPAD_SESSION_KEY: ${session_key}
    labels:
      io.rancher.scheduler.affinity:host_label: availability=permanent
-     io.rancher.sidekicks: data, db
+     io.rancher.sidekicks: db_data
 
-db:
+db_data:
    tty: true
    image: mysql
    stdin_open: true
-   volumes_from:
-     - data
-   environment:
-     MYSQL_ROOT_PASSWORD: ${root_pswd}
-
-data:
-   tty: true
-   image: ubuntu
-   stdin_open: true
-   net: none
    volumes:
       - etherpad_db:/var/lib/mysql
       - etherpad_settings:/opt/etherpad_lite/var
+   environment:
+     MYSQL_ROOT_PASSWORD: ${root_pswd}
+
