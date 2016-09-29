@@ -6,8 +6,6 @@ etherpad_db:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
   volumes:
     - eth_db:/var/lib/mysql
-  labels:
-    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 etherpad:
   tty: true
@@ -23,5 +21,3 @@ etherpad:
     ETHERPAD_TITLE: ${title}
     ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
     ETHERPAD_SESSION_KEY: ${session_key}
-  labels:
-    io.rancher.scheduler.affinity:host_label: availability=permanent
