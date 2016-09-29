@@ -1,26 +1,18 @@
-# lb:
-#  ports:
-#  - 80:80
-#  image: rancher/load-balancer-service
-#  links:
-#  - rocketchat:rocketchat
-#  labels:
-    # Put load balancer containers only on hosts without label availability=temporal
-#    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
-    # Requests to http://app.example.com/foo:80 should be routed to web1 over port 8000
-    # io.rancher.loadbalancer.target.etherpad: rocketchat.educaas.io:80=3000
 mongo:
+  tty: true
   image: mongo
+  stdin_open: true
   volumes:
      - rc_db:/data/db
      - rc_db_dump:/dump
   command: mongod --smallfiles --oplogSize 128
   labels:
-    # Put load balancer containers only on hosts without label availability=temporal
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 rocketchat:
+  tty: true
   image: rocketchat/rocket.chat:latest
+  stdin_open: true
   volumes:
      - rc_uploads:/app/uploads
   environment:
@@ -32,12 +24,13 @@ rocketchat:
   ports:
     - 3000:3000
   labels:
-    # Put load balancer containers only on hosts without label availability=temporal
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 # hubot, the popular chatbot (add the bot user first and change the password before starting this image)
 hubot:
+  tty: true
   image: rocketchat/hubot-rocketchat
+  stdin_open: true
   environment:
     - ROCKETCHAT_URL=rocketchat:3000
     - ROCKETCHAT_ROOM=GENERAL
@@ -52,5 +45,4 @@ hubot:
   ports:
     - 3001:8080
   labels:
-    # Put load balancer containers only on hosts without label availability=temporal
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    io.rancher.scheduler.affinity:host_label: availability=permanent
