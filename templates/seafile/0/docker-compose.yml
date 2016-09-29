@@ -13,7 +13,7 @@ seafile:
   environment:
     AUTOSTART: 'true'
   labels:
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal, nfs=true 
+    io.rancher.scheduler.affinity:host_label: availability=permanent 
 
 data:
   tty: true
