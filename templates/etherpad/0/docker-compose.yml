@@ -1,9 +1,9 @@
 etherpad_db:
-   image: mariadb
+   image: mysql
    environment:
      MYSQL_ROOT_PASSWORD: ${root_pswd}
    volumes:
-     - etherpad_db:/var/lib/mysql
+     - eth_db:/var/lib/mysql
 
 etherpad:
    image: tvelocity/etherpad-lite
