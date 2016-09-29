@@ -18,7 +18,7 @@ etherpad:
   links:
     - etherpad_db:mysql
   volumes_from:
-    - etherpad_data
+    - etherpad_db
   environment:
     ETHERPAD_TITLE: ${title}
     ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
