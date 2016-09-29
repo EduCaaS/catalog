@@ -18,7 +18,7 @@ etherpad:
 
 db:
    tty: true
-   image: mysql
+   image: mariadb
    stdin_open: true
    volumes:
       - etherpad_db:/var/lib/mysql
