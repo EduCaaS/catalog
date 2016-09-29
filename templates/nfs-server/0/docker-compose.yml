@@ -1,7 +1,12 @@
 nfs:
+  tty: true
   image: dalareo/nfs-server
+  stdin_open: true
   privileged: true
   volumes:
   - /exports
   command:
   - /exports
+  labels:
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    io.rancher.scheduler.affinity:host_label: nfs=true

@@ -13,7 +13,6 @@ seafile:
   environment:
     AUTOSTART: 'true'
   labels:
-    # Make db only run on hosts that do not have a x=y label
     io.rancher.scheduler.affinity:host_label_ne: availability=temporal, nfs=true 
     io.rancher.sidekicks: data
 
@@ -26,6 +25,3 @@ data:
   net: none
   volumes:
     - seafile_data:/opt/seafile
-  labels:
-    # Make db only run on hosts that do not have a x=y label
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal, nfs=true
