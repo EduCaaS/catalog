@@ -1,7 +1,5 @@
 seafile:
-  tty: true
   image: dalareo/seafile
-  stdin_open: true
   ports:
 #    - 10001:10001
 #    - 12001:12001
