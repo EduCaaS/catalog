@@ -24,4 +24,6 @@ db:
       - etherpad_db:/var/lib/mysql
    environment:
      MYSQL_ROOT_PASSWORD: ${root_pswd}
+   labels:
+     io.rancher.scheduler.affinity:host_label: availability=permanent
 
