@@ -8,6 +8,8 @@ seafile:
     - ${client_port}:8000
 #    - 8080:8080
     - ${file_port}:8082
+  links:
+    - data
   volumes_from:
     - data
   environment:
