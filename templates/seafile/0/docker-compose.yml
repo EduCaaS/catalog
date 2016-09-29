@@ -21,7 +21,7 @@ data:
   image: dalareo/seafile-data
   stdin_open: true
   net: none
-#  volume_driver: convoy-nfs
+  volume_driver: convoy-nfs
   volumes:
     - seafile_data:/opt/seafile
 
