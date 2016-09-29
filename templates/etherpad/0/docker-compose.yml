@@ -1,4 +1,4 @@
-etherpad_db:
+ethpad_db:
   tty: true
   image: mariadb
   stdin_open: true
@@ -7,7 +7,7 @@ etherpad_db:
   volumes:
     - eth_db:/var/lib/mysql
 
-etherpad:
+ethpad:
   tty: true
   image: tvelocity/etherpad-lite
   stdin_open: true
