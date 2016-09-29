@@ -23,7 +23,6 @@ data:
     - cat
   image: dalareo/seafile-data
   stdin_open: true
-  net: none
   volumes:
     - seafile_data:/opt/seafile
   labels:
