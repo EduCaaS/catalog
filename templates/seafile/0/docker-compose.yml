@@ -8,25 +8,24 @@ seafile:
     - ${client_port}:8000
 #    - 8080:8080
     - ${file_port}:8082
-  links:
-    - data
   volumes_from:
     - data
   environment:
     AUTOSTART: 'true'
   labels:
-    # Make db only run on hosts that do not have a availability=temporal label
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal 
+    # Make db only run on hosts that do not have a x=y label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal, nfs=true 
     io.rancher.sidekicks: data
 
 data:
   tty: true
   command:
-    - cat
+    - bin/true
   image: dalareo/seafile-data
   stdin_open: true
+  net: none
   volumes:
     - seafile_data:/opt/seafile
   labels:
-    # Make db only run on hosts that do not have a availability=temporal label
-    io.rancher.scheduler.affinity:host_label_ne: availability=temporal
+    # Make db only run on hosts that do not have a x=y label
+    io.rancher.scheduler.affinity:host_label_ne: availability=temporal, nfs=true
