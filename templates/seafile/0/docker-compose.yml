@@ -1,7 +1,5 @@
 seafile:
-  tty: true
   image: dalareo/seafile
-  stdin_open: true
   ports:
 #    - 10001:10001
 #    - 12001:12001
@@ -17,11 +15,8 @@ seafile:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 data:
-  tty: true
   image: dalareo/seafile-data
-  stdin_open: true
   net: none
-  volume_driver: convoy-nfs
   volumes:
     - seafile_data:/opt/seafile
 
