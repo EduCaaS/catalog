@@ -5,7 +5,6 @@ etherpad_db:
   stdin_open: true
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
-  volume_driver: convoy-nfs
   volumes_from:
     - etherpad_data
 
@@ -14,6 +13,7 @@ etherpad_data:
   image: ubuntu
   stdin_open: true
   net: none
+  volume_driver: convoy-nfs
   volumes:
     - etherpad_db:/var/lib/mysql
     - etherpad_settings:/opt/etherpad-lite/var
