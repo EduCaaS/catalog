@@ -1,18 +1,9 @@
-
 etherpad_db:
   tty: true
   image: mariadb
   stdin_open: true
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
-  volumes_from:
-    - etherpad_data
-
-etherpad_data:
-  tty: true
-  image: ubuntu
-  stdin_open: true
-  net: none
   volume_driver: convoy-nfs
   volumes:
     - eth_db:/var/lib/mysql
@@ -34,4 +25,4 @@ etherpad:
     ETHERPAD_SESSION_KEY: ${session_key}
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
-    io.rancher.sidekicks: etherpad_data, etherpad_db
+    io.rancher.sidekicks: etherpad_db
