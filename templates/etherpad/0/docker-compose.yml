@@ -7,7 +7,8 @@ etherpad_db:
   volume_driver: convoy-nfs
   volumes:
     - eth_db:/var/lib/mysql
-    - eth_conf:/opt/etherpad-lite/var
+  labels:
+    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 etherpad:
   tty: true
@@ -17,12 +18,12 @@ etherpad:
     - ${client_port}:9001
   links:
     - etherpad_db:mysql
-  volumes_from:
-    - etherpad_db
+  volume_driver: convoy-nfs
+  volumes:
+    - eth_conf:/opt/etherpad-lite/var
   environment:
     ETHERPAD_TITLE: ${title}
     ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
     ETHERPAD_SESSION_KEY: ${session_key}
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
-    io.rancher.sidekicks: etherpad_db
