@@ -1,23 +1,5 @@
-ethpad_db:
+etherpad:
   tty: true
-  image: mariadb
+  image: ubuntu
   stdin_open: true
-  environment:
-    MYSQL_ROOT_PASSWORD: ${root_pswd}
-  volumes:
-    - eth_db:/var/lib/mysql
 
-ethpad:
-  tty: true
-  image: tvelocity/etherpad-lite
-  stdin_open: true
-  ports:
-    - ${client_port}:9001
-  links:
-    - etherpad_db:mysql
-  volumes:
-    - eth_conf:/opt/etherpad-lite/var
-  environment:
-    ETHERPAD_TITLE: ${title}
-    ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}
-    ETHERPAD_SESSION_KEY: ${session_key}
