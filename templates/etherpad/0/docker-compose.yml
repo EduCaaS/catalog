@@ -5,7 +5,7 @@ etherpad_db:
   stdin_open: true
   environment:
     MYSQL_ROOT_PASSWORD: ${root_pswd}
-# volume_driver: convoy-nfs
+  volume_driver: convoy-nfs
   volumes_from:
     - etherpad_data
 

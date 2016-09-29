@@ -8,22 +8,20 @@ seafile:
     - ${client_port}:8000
 #    - 8080:8080
     - ${file_port}:8082
-  links:
-    - data
   volumes_from:
     - data
   environment:
     AUTOSTART: 'true'
   labels:
-    io.rancher.scheduler.affinity:host_label: availability=permanent 
+    io.rancher.sidekicks: data
+    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 data:
   tty: true
-  command:
-    - cat
   image: dalareo/seafile-data
   stdin_open: true
+  net: none
+  volume_driver: convoy-nfs
   volumes:
     - seafile_data:/opt/seafile
-  labels:
-    io.rancher.scheduler.affinity:host_label: availability=permanent
+
