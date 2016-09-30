@@ -5,6 +5,9 @@
   uuid: rocketchat-0
   minimum_rancher_version: v0.51.0
   questions:
-
-
-rocketchat:
+    - variable: hostname
+      description: "Hostname or IP"
+      label: "Hostname"
+      required: true
+      default: "localhost"
+      type: "string"

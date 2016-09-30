@@ -14,10 +14,10 @@ rocketchat:
   image: rocketchat/rocket.chat:latest
   stdin_open: true
   volumes:
-     - rc_uploads:/app/uploads
+    - rc_uploads:/app/uploads
   environment:
     - PORT=3000
-    - ROOT_URL=http://yourhost:3000
+    - ROOT_URL=http://${hostname}:3000
     - MONGO_URL=mongodb://mongo:27017/rocketchat
   links:
     - mongo:mongo
