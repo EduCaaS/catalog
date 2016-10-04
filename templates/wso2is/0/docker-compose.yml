@@ -5,3 +5,6 @@ wso2is:
     - 9443:9443
     - 9763:9763
     - 10389:10389
+  
+  labels:
+     io.rancher.scheduler.affinity:host_label: availability=permanent
