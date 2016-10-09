@@ -17,33 +17,33 @@
       required: true
       default: "localhost"
       type: "string"
-    - variable: smtp_host
-      description: "SMTP server"
-      label: "SMTP host address"
-      required: true
-      default: "smtp.hostname.com"
-      type: "string"
-    - variable: smtp_user
-      description: "Credentials to send mail"
-      label: "SMTP User"
-      required: true
-      default: "user@domain.com"
-      type: "string"
-    - variable: smtp_password
-      description: "Credentials to send mail"
-      label: "SMTP Password"
-      required: true
-      default: "password"
-      type: "string"  
+    # - variable: smtp_host
+    #  description: "SMTP server"
+    #  label: "SMTP host address"
+    #  required: true
+    #  default: "smtp.hostname.com"
+    #  type: "string"
+    # - variable: smtp_user
+    #  description: "Credentials to send mail"
+    #  label: "SMTP User"
+    #  required: true
+    #  default: "user@domain.com"
+    #  type: "string"
+    # - variable: smtp_password
+    #  description: "Credentials to send mail"
+    #  label: "SMTP Password"
+    #  required: true
+    #  default: "password"
+    #  type: "string"  
     - variable: secret_key
       description: "Taiga secret key"
       label: "Secret Key"
       required: true
       default: "examplesecretkey"
       type: "string"
-    - variable: default_email
-      description: "Emails sent from this account"
-      label: "Default email address"
-      required: true
-      default: "user@domain.com"
-      type: "string"
+    # - variable: default_email
+    #  description: "Emails sent from this account"
+    #  label: "Default email address"
+    #  required: true
+    #  default: "user@domain.com"
+    #  type: "string"
