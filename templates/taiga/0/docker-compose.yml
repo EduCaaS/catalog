@@ -22,25 +22,25 @@ taiga:
   links:
     - postgres
   environment:
-    TAIGA_SLEEP: 30
-    TAIGA_HOSTNAME: ${hostname}
+    - TAIGA_SLEEP=30
+    - TAIGA_HOSTNAME=${hostname}
     # TAIGA_SSL: "True"  # To enable SSL, uncomment this line
 
-    TAIGA_DB_HOST: postgres
-    TAIGA_DB_NAME: taiga
-    TAIGA_DB_USER: taiga
-    TAIGA_DB_PASSWORD: password
+    - TAIGA_DB_HOST=postgres
+    - TAIGA_DB_NAME=taiga
+    - TAIGA_DB_USER=taiga
+    - TAIGA_DB_PASSWORD=password
     
-    TAIGA_SECRET_KEY: ${secret_key}
+    - TAIGA_SECRET_KEY=${secret_key}
 
-    EMAIL_BACKEND: django.core.mail.backends.smtp.EmailBackend
+    - EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
     - EMAIL_USE_TLS="True"
-    EMAIL_HOST: ${smtp_host}
+    - EMAIL_HOST=${smtp_host}
     - EMAIL_PORT=587
-    EMAIL_HOST_USER: ${smtp_user}
-    EMAIL_HOST_PASSWORD: ${smtp_password}
+    - EMAIL_HOST_USER=${smtp_user}
+    - EMAIL_HOST_PASSWORD=${smtp_password}
     
-    DEFAULT_FROM_EMAIL: ${default_email}
+    - DEFAULT_FROM_EMAIL=${default_email}
 
   volumes:
     - taiga_media:/usr/src/taiga-back/media
