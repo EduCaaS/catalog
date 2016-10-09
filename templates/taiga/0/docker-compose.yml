@@ -34,7 +34,7 @@ taiga:
     TAIGA_SECRET_KEY: ${secret_key}
 
     EMAIL_BACKEND: django.core.mail.backends.smtp.EmailBackend
-    EMAIL_USE_TLS: 'True'
+    EMAIL_USE_TLS: True
     EMAIL_HOST: ${smtp_host}
     EMAIL_PORT: 587
     EMAIL_HOST_USER: ${smtp_user}
