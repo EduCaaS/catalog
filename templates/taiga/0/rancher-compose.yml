@@ -21,19 +21,19 @@
       description: "SMTP server"
       label: "SMTP host address"
       required: true
-      default: "smtp.hostname.com"
+      default: "smtp.sendgrid.net"
       type: "string"
     - variable: smtp_user
       description: "Credentials to send mail"
       label: "SMTP User"
       required: true
-      default: "user@domain.com"
+      default: "apikey"
       type: "string"
     - variable: smtp_password
       description: "Credentials to send mail"
-      label: "SMTP Password"
+      label: "SMTP password"
       required: true
-      default: "password"
+      default: "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"
       type: "string"  
     - variable: secret_key
       description: "Taiga secret key"
