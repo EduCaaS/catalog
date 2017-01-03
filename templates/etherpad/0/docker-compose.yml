@@ -1,3 +1,14 @@
+db:
+   tty: true
+   image: mysql
+   stdin_open: true
+   environment:
+     MYSQL_ROOT_PASSWORD: ${root_pswd}
+   volumes:
+      - etherpad_db:/var/lib/mysql
+   labels:
+     io.rancher.scheduler.affinity:host_label: availability=permanent
+
 etherpad:
    tty: true
    image: tvelocity/etherpad-lite
@@ -14,16 +25,3 @@ etherpad:
      - db:mysql
    labels:
      io.rancher.scheduler.affinity:host_label: availability=permanent
-
-
-db:
-   tty: true
-   image: mysql
-   stdin_open: true
-   environment:
-     MYSQL_ROOT_PASSWORD: ${root_pswd}
-   volumes:
-      - etherpad_db:/var/lib/mysql
-   labels:
-     io.rancher.scheduler.affinity:host_label: availability=permanent
-
