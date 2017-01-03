@@ -7,5 +7,5 @@ nfs:
   - /exports
   command:
   - /exports
-  labels:
-    io.rancher.scheduler.affinity:host_label: nfs=true
+#  labels:
+#    io.rancher.scheduler.affinity:host_label: nfs=true
