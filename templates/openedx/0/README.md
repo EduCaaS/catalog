@@ -9,8 +9,7 @@ This stack is based on the OpenEdX docker implementation in the [EdX configurati
 
 #### How to use
 1. Fill out the custom information and storage locations, note some storage locations are shared between containers so shared storage should be used.
-2. Once launched let it run until the EdxappMigrate container has finished, this sets up the mysql database and collects the static assets for nginx to serve, and should take around 15-20mins to complete. This only needs to be run once. Once this is completed you may need to restart the cms and lms services.
-3. Setup an initial django/openedx super user by executing a shell on lms and running and running the following commands:
+2. Setup an initial django/openedx super user by executing a shell on lms and running and running the following commands:
 ```bash
 cd /edx/app
 source edxapp/edxapp_env
