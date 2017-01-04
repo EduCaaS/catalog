@@ -1,6 +1,6 @@
 .catalog:
   name: "Wso2 IS"
   version: v0.1-educaas
-  description: "The first entreprise identity bus"
+  description: "Gestión de las identidades y servidor de autenticación"
   minimum_rancher_version: v1.0.0-rc2
   questions:

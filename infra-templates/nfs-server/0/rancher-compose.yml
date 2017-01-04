@@ -1,6 +1,6 @@
 .catalog:
   name: "NFS-Server"
   version: v0.1-educaas
-  description: "Docker NFS Server"
+  description: "Servidor NFS basado en Docker para alojar datos y hacer copias de seguridad."
   minimum_rancher_version: v1.0.0-rc2
 

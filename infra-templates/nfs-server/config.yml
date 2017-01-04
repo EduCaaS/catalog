@@ -1,5 +1,5 @@
 name: NFS-Server
 description: |
-  Docker NFS server.
+  Servidor NFS basado en Docker para alojar datos y hacer copias de seguridad.
 version: v0.1-educaas
-category: Storage
+category: Admin

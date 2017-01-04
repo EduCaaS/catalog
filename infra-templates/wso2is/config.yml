@@ -1,5 +1,5 @@
 name: Wso2 IS
 description: |
-  The first entreprise identity bus
+  Gestión de las identidades y servidor de autenticación
 version: v0.1-educaas
-category: Administration
+category: Admin
