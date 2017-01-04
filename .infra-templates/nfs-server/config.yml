@@ -1,5 +1,0 @@
-name: NFS-Server
-description: |
-  Docker NFS server.
-version: v0.1-educaas
-category: Storage

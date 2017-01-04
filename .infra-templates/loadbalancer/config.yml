@@ -1,5 +1,0 @@
-name: Load Balancer
-description: |
-  Workload distribution and hostname assignment
-version: v0.1-educaas
-category: Administration
