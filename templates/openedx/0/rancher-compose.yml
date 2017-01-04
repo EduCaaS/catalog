@@ -1,9 +1,9 @@
 .catalog:
     name: "OpenEdx"
     version: "v0.1"
-    description: "The Open Source LMS behind edX"
+    description: "Plataforma de formación online utilizada por las principales universidades."
     uuid: OpenEdx-0
-    minimum_rancher_version: v1.1.4
+    minimum_rancher_version: v1.2
     questions:
         - variable: EDX_DATA_ROOT
           description: "OpenEdx Data Storage Location"

@@ -1,9 +1,9 @@
 .catalog:
   name: "Gogs"
   version: "v0.8.43"
-  description: "A painless self-hosted Git service"
+  description: "Un servidor Git en tu propia infraestructura fácil de gestionar, como Github."
   uuid: gogs-0
-  minimum_rancher_version: v0.51.0
+  minimum_rancher_version: v1.2
   questions:
     - variable: http_port
       description: "http port to access gogs webui"
@@ -17,5 +17,3 @@
       required: true
       default: "password"
       type: "string"
-
-gogs:

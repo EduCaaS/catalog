@@ -1,9 +1,9 @@
 .catalog:
   name: "Seafile"
   version: "v0.1-educaas"
-  description: "Reliable and High Speed File Sync and Share"
+  description: "Sincroniza tus archivos entre dispositivos y comparte con tu equipo, como Dropbox."
   uuid: seafile-0
-  minimum_rancher_version: v0.51.0
+  minimum_rancher_version: v1.2
   questions:
     - variable: client_port
       description: "Port to access Seafile"

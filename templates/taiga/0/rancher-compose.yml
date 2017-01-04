@@ -1,9 +1,9 @@
 .catalog:
   name: "Taiga"
   version: "v0.1-educaas1"
-  description: "Project management platform for agile developers"
+  description: "Gestión de proyectos basado en metodología ágil, como Trello, y más!!"
   uuid: taiga-0
-  minimum_rancher_version: v0.51.0
+  minimum_rancher_version: v1.2
   questions:
     - variable: port
       description: "Taiga frontend port"
@@ -34,7 +34,7 @@
       label: "SMTP password"
       required: true
       default: "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"
-      type: "string"  
+      type: "string"
     - variable: secret_key
       description: "Taiga secret key"
       label: "Secret Key"

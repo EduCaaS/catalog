@@ -1,5 +1,5 @@
 name: Gogs
 description: |
-    A painless self-hosted Git service
+    Un servidor Git en tu propia infraestructura fácil de gestionar, como Github.
 version: v0.8.43
 category: Git
