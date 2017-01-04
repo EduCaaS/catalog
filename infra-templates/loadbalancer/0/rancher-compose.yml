@@ -1,0 +1,36 @@
+.catalog:
+  name: "Load Balancer"
+  version: v0.1-educaas
+  description: "Workload distribution and hostname assignment"
+  minimum_rancher_version: v1.0.0-rc2
+  questions:
+    - variable: hostname
+      description: "Your domain"
+      label: "Domain of your installation (default: educaas.io)"
+      required: true
+      default: "educaas.io"
+      type: "string"
+    - variable: stack_1
+      description: "External stack"
+      label: "Stack of this service (default: etherpad)"
+      required: true
+      default: "etherpad"
+      type: "string"
+    - variable: service_1
+      description: "Service"
+      label: "Name of this service (default: etherpad)"
+      required: true
+      default: "etherpad"
+      type: "string"
+    - variable: subdomain_1
+      description: "Subdomain"
+      label: "Subdomain to this service (default: etherpad)"
+      required: true
+      default: "etherpad"
+      type: "string"
+    - variable: port_1
+      description: "Port number"
+      label: "Port number to this service (default: 9001)"
+      required: true
+      default: 9001
+      type: "int"
