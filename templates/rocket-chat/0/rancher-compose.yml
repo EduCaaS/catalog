@@ -3,7 +3,6 @@
   version: "v0.1-educaas"
   description: "Tu propia plataforma de comunicación y chat, como Slack."
   uuid: rocketchat-0
-  minimum_rancher_version: v1.2
   questions:
     - variable: hostname
       description: "Hostname or IP"

@@ -3,7 +3,6 @@
   version: "v0.1-educaas1"
   description: "Gestión de proyectos basado en metodología ágil, como Trello, y más!!"
   uuid: taiga-0
-  minimum_rancher_version: v1.2
   questions:
     - variable: port
       description: "Taiga frontend port"

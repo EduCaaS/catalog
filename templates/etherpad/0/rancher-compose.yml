@@ -3,7 +3,6 @@
   version: v0.1-educaas
   description: "Edita documentos entre varias personas en tiempo real como Google Drive."
   uuid: etherpad-0
-  minimum_rancher_version: v1.2
   questions:
     - variable: client_port
       description: "Port to access Etherpad"

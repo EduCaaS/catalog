@@ -3,7 +3,6 @@
     version: "v0.1"
     description: "Plataforma de formación online utilizada por las principales universidades."
     uuid: OpenEdx-0
-    minimum_rancher_version: v1.2
     questions:
         - variable: EDX_DATA_ROOT
           description: "OpenEdx Data Storage Location"

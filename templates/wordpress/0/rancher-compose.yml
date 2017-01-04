@@ -3,7 +3,6 @@
   version: v0.1-educaas
   description: "Herramienta de publicación, blog y gestor de contenidos."
   uuid: wordpress-0
-  minimum_rancher_version: v1.2
   questions:
     - variable: client_port
       description: "Port to access Wordpress"

@@ -3,7 +3,6 @@
   version: "v0.8.43"
   description: "Un servidor Git en tu propia infraestructura fácil de gestionar, como Github."
   uuid: gogs-0
-  minimum_rancher_version: v1.2
   questions:
     - variable: http_port
       description: "http port to access gogs webui"
