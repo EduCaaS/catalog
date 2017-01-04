@@ -1,4 +1,4 @@
-db:
+mysql:
    tty: true
    image: mysql
    stdin_open: true
@@ -22,6 +22,6 @@ etherpad:
    volumes:
       - etherpad_settings:/opt/etherpad-lite/var
    links:
-     - db:mysql
+     - mysql:mysql
    labels:
      io.rancher.scheduler.affinity:host_label: availability=permanent
