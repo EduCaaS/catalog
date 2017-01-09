@@ -17,10 +17,11 @@ seafile:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 data:
-  tty: true
+#  tty: true
   image: dalareo/seafile-data
-  stdin_open: true
-  net: none
+#  stdin_open: true
+#  net: none
   volumes:
     - seafile_data:/opt/seafile
-
+  labels:
+    io.rancher.scheduler.affinity:host_label: availability=permanent
