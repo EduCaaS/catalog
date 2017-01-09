@@ -13,7 +13,7 @@ seafile:
   environment:
     AUTOSTART: 'true'
   labels:
-    io.rancher.sidekicks: data
+#    io.rancher.sidekicks: data
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 data:
