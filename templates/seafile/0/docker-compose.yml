@@ -8,8 +8,8 @@ seafile:
     - ${client_port}:8000
 #    - 8080:8080
     - ${file_port}:8082
-  volumes_from:
-    - data
+  volumes:
+    - seafile_data:/opt/seafile
   environment:
     AUTOSTART: 'true'
   labels:
@@ -17,10 +17,11 @@ seafile:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 data:
-#  tty: true
+  tty: true
   image: dalareo/seafile-data
-#  stdin_open: true
-#  net: none
+  command: /bin/true
+  stdin_open: true
+  net: none
   volumes:
     - seafile_data:/opt/seafile
   labels:
