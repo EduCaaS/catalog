@@ -9,14 +9,14 @@ seafile:
 #    - 8080:8080
     - ${file_port}:8082
   volumes_from:
-    - seafile_data
+    - data
   environment:
     AUTOSTART: 'true'
   labels:
 #    io.rancher.sidekicks: data
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
-seafile_data:
+data:
   tty: true
   image: dalareo/seafile-data
   command: /bin/true
