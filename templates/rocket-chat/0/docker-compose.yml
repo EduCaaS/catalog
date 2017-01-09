@@ -11,7 +11,7 @@ mongo:
 
 rocketchat:
   tty: true
-  image: rocketchat/rocket.chat:latest
+  image: rocket.chat
   stdin_open: true
   volumes:
     - rc_uploads:/app/uploads
@@ -27,22 +27,22 @@ rocketchat:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 # hubot, the popular chatbot (add the bot user first and change the password before starting this image)
-hubot:
-  tty: true
-  image: rocketchat/hubot-rocketchat
-  stdin_open: true
-  environment:
-    - ROCKETCHAT_URL=rocketchat:3000
-    - ROCKETCHAT_ROOM=GENERAL
-    - ROCKETCHAT_USER=bot
-    - ROCKETCHAT_PASSWORD=botpassword
-    - BOT_NAME=bot
+#hubot:
+#  tty: true
+#  image: rocketchat/hubot-rocketchat
+#  stdin_open: true
+#  environment:
+#    - ROCKETCHAT_URL=rocketchat:3000
+#    - ROCKETCHAT_ROOM=GENERAL
+#    - ROCKETCHAT_USER=bot
+#    - ROCKETCHAT_PASSWORD=botpassword
+#    - BOT_NAME=bot
 # you can add more scripts as you'd like here, they need to be installable by npm
-    - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
-  links:
-    - rocketchat:rocketchat
+#    - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
+#  links:
+#    - rocketchat:rocketchat
 # this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier
-  ports:
-    - 3001:8080
-  labels:
-    io.rancher.scheduler.affinity:host_label: availability=permanent
+#  ports:
+#    - 3001:8080
+#  labels:
+#    io.rancher.scheduler.affinity:host_label: availability=permanent
