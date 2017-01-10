@@ -8,4 +8,5 @@ gogs:
 mysql:
     image: mysql:latest
     environment:
-        MYSQL_ROOT_PASSWORD: ${mysql_password}
+        - MYSQL_ROOT_PASSWORD=${mysql_password}
+        - MYSQL_DATABASE=gogs
