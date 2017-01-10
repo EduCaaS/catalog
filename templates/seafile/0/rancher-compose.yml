@@ -4,7 +4,7 @@
   description: "Sincroniza tus archivos entre dispositivos y comparte con tu equipo, como Dropbox."
   uuid: seafile-0
   questions:
-    - variable: client_port
+    - variable: public_port
       description: "Port to access Seafile"
       label: "Client Port"
       required: true
@@ -16,3 +16,8 @@
       required: true
       default: "8082"
       type: "int"
+    - variable: password
+      description: "MySql DB password"
+      label: "Database password"
+      default: "password"
+      type: "string"

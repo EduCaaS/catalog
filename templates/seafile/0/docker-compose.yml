@@ -1,28 +1,28 @@
-seafile:
-  tty: true
-  image: dalareo/seafile
-  stdin_open: true
-  ports:
-#    - 10001:10001
-#    - 12001:12001
-    - ${client_port}:8000
-#    - 8080:8080
-    - ${file_port}:8082
-  volumes:
-    - seafile_data:/opt/seafile
-#  entrypoint: 
-#  command: bash -c "/opt/seafile/seafile-server-latest/seafile.sh start && /opt/seafile/seafile-server-latest/seahub.sh start"
-  labels:
-#    io.rancher.sidekicks: data
-    io.rancher.scheduler.affinity:host_label: availability=permanent
+version: '2'
+services:
+  seafile:
+     image: dalareo/seafile
+     ports:
+      - ${public_port}:8000
+      - ${file_port}:8082
+     volumes:
+      - seafile_data:/opt/seafile
+     links:
+      - mysql:db
+     entrypoint: tail -f /dev/null
+     labels:
+        io.rancher.scheduler.affinity:host_label: availability=permanent
 
-#data:
-#  tty: true
-#  image: dalareo/seafile-data
-#  command: /bin/true
-#  stdin_open: true
-#  net: none
-#  volumes:
-#    - seafile_data:/opt/seafile
-#  labels:
-#    io.rancher.scheduler.affinity:host_label: availability=permanent
+  mysql:
+     image: mysql:5.7
+     ports:
+      - 3306
+     volumes:
+      - seafile_db:/var/lib/mysql
+     environment:
+      - MYSQL_DATABASE=seafile
+      - MYSQL_USER=seafile
+      - MYSQL_PASSWORD=${password}
+      - MYSQL_ROOT_PASSWORD=${password}
+     labels:
+        io.rancher.scheduler.affinity:host_label: availability=permanent
