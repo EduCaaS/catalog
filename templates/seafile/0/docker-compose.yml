@@ -10,6 +10,7 @@ seafile:
     - ${file_port}:8082
   volumes:
     - seafile_data:/opt/seafile
+  entrypoint: /bin/true
   command: bash -c "/opt/seafile/seafile-server-latest/seafile.sh start && /opt/seafile/seafile-server-latest/seahub.sh start"
   environment:
     AUTOSTART: 'true'
