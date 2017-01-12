@@ -5,6 +5,8 @@ mongo:
   volumes:
      - rc_db:/data/db
      - rc_db_dump:/dump
+     - rc_db_config:/data/configdb
+
   command: mongod --smallfiles --oplogSize 128
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
