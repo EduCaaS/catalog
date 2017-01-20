@@ -1,0 +1,12 @@
+.catalog:
+  name: "Design Thinking"
+  version: v0.1-educaas
+  description: "Herramienta de cocreación y acompañamiento de sesiones."
+  uuid: designthinking-0
+  questions:
+    - variable: client_port
+      description: "Port to access App"
+      label: "Client Port"
+      required: true
+      default: "9007"
+      type: "int"
