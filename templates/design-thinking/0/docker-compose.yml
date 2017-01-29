@@ -1,10 +1,10 @@
 dashboard:
-  image: dalareo/design-thinking
+  image: dalareo/design-thinking:selector
   links:
    - mongo
   environment:
    - MONGO_URL=mongodb://mongo/yourapp
-   - ROOT_URL=http://yourapp.com
+   - ROOT_URL=${app_url}
    # - MAIL_URL=smtp://some.mailserver.com:25
 
   ports:

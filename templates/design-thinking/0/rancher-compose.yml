@@ -10,3 +10,9 @@
       required: true
       default: "9007"
       type: "int"
+    - variable: app_url
+      description: "Address of your App"
+      label: "App URL"
+      required: true
+      default: "http://yourapp.com
+      type: "string"
