@@ -1,5 +1,5 @@
 .catalog:
-  name: "Design Thinking"
+  name: "Canvas Tool"
   version: v0.1-educaas
   description: "Herramienta de cocreación y acompañamiento de sesiones."
   uuid: designthinking-0
