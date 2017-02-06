@@ -2,7 +2,7 @@
   name: "Canvas Tool"
   version: v0.1-educaas
   description: "Herramienta de cocreación y acompañamiento de sesiones."
-  uuid: designthinking-0
+  uuid: canvas-0
   questions:
     - variable: client_port
       description: "Port to access App"
