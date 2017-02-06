@@ -14,5 +14,5 @@
       description: "Address of your App"
       label: "App URL"
       required: true
-      default: "http://yourapp.com
+      default: "http://yourapp.com"
       type: "string"
