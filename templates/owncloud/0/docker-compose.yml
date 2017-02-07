@@ -4,8 +4,12 @@ owncloud:
     - ${client_port}:80
   links:
     - db
+  volumes:
+    - owncloud_files:/var/www/html
 
 db:
   image: mariadb
   environment:
     - MYSQL_ROOT_PASSWORD=${db_password}
+  volumes:
+    - owncloud_db:/var/lib/mysql
