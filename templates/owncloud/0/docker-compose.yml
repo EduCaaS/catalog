@@ -6,6 +6,8 @@ owncloud:
     - db
   volumes:
     - owncloud_files:/var/www/html
+  labels:
+    io.rancher.scheduler.affinity:host_label: availability=permanent
 
 db:
   image: mariadb
@@ -13,3 +15,6 @@ db:
     - MYSQL_ROOT_PASSWORD=${db_password}
   volumes:
     - owncloud_db:/var/lib/mysql
+  labels:
+    io.rancher.scheduler.affinity:host_label: availability=permanent
+
