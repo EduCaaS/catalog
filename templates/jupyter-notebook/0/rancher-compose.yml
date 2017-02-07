@@ -1,7 +1,7 @@
 .catalog:
   name: "Jupyter Base Notebook"
   version: "v0.1-educaas"
-  description: "The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text."
+  description: "Aplicación web que permite crear y compartir documentos con código, visualizaciones, etc."
   uuid: jupyter-0
   questions:
     - variable: public_port
