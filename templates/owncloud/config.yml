@@ -1,5 +1,5 @@
 name: Owncloud
 description: |
-  Library service powered by Owncloud
+  Servicio de alojamiento de archivos alternativo a Dropbox
 version: v0.1-educaas
 category: Repository
