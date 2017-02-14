@@ -1,6 +1,6 @@
 ethercalc:
   tty: true
-  image: audreyt/ethercalc
+  image: dalareo/ethercalc
   stdin_open: true
   ports:
     - ${client_port}:8000
