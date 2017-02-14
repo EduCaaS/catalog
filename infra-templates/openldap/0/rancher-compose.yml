@@ -1,0 +1,6 @@
+.catalog:
+  name: "OpenLDAP"
+  version: v0.1-educaas
+  description: "Directorio de usuarios basado en el estandard OpenLDAP"
+  minimum_rancher_version: v1.0.0-rc2
+  questions:

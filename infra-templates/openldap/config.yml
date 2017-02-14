@@ -1,0 +1,5 @@
+name: OpenLDAP
+description: |
+  Directorio de usuarios usando el standard OpenLDAP
+version: v0.1-educaas
+category: Admin
