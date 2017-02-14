@@ -1,7 +1,5 @@
 ethercalc:
-  tty: true
-  image: dalareo/ethercalc
-  stdin_open: true
+  image: audreyt/ethercalc
   ports:
     - ${client_port}:8000
   links:
@@ -10,9 +8,7 @@ ethercalc:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 redis:
-  tty: true
   image: redis:latest
-  stdin_open: true
   volumes:
     - ethercalc_db:/data
   command: redis-server --appendonly yes
