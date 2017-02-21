@@ -2,7 +2,7 @@ version: '2'
 services:
 
   cryptpad:
-    image: dalareo/cryptpad"
+    image: dalareo/cryptpad
     hostname: cryptpad
     ports:
       - ${client_port}:3000
