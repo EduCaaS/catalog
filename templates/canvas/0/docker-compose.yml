@@ -1,5 +1,5 @@
 dashboard:
-  image: dalareo/design-thinking:selector
+  image: dalareo/creative-canvas:selector
   links:
    - mongo
   environment:
