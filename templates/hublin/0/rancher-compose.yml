@@ -1,0 +1,12 @@
+.catalog:
+  name: "Hublin"
+  version: v0.1-educaas
+  description: "Servicio de videochat privado."
+  uuid: hublin-0
+  questions:
+    - variable: client_port
+      description: "Port to access Hublin"
+      label: "Client Port"
+      required: true
+      default: "9080"
+      type: "int"

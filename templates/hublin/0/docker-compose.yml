@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  hublin:
+    image: linagora/hublin
+    ports:
+      - ${client_port}:8080
+    links:
+      - db:db
+      - redis:redis
+    labels:
+      io.rancher.scheduler.affinity:host_label: availability=permanent
+
+  db:
+    image: mongo
+    labels:
+      io.rancher.scheduler.affinity:host_label: availability=permanent
+
+  redis:
+    image: redis
+    labels:
+      io.rancher.scheduler.affinity:host_label: availability=permanent
