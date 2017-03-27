@@ -1,4 +1,4 @@
-svgedit:
+mymind:
   tty: true
   image: dalareo/my-mind
   stdin_open: true
