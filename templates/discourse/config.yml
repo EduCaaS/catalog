@@ -1,0 +1,5 @@
+name: Discourse
+description: |
+    Un foro para conversar civilizadamente con muchos plugins.
+version: v0.1-educaas
+category: Foro

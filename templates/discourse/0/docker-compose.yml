@@ -1,0 +1,28 @@
+app:
+    image: dalareo/discourse
+    volumes:
+      - discourse_assets:/usr/src/app/public/assets
+      - discourse_uploads:/usr/src/app/public/uploads
+      - discourse_backups:/usr/src/app/public/backups
+    links:
+      - postgres
+      - redis
+    environment:
+      - DISCOURSE_SMTP_ADDRESS=${smtp_server}
+      - DISCOURSE_SMTP_PORT=${smtp_port}
+      - DISCOURSE_SMTP_USER_NAME=${smtp_username}
+      - DISCOURSE_SMTP_PASSWORD=${smtp_password}
+      - DISCOURSE_HOSTNAME=${hostname}
+      - DISCOURSE_DEVELOPER_EMAILS=${admin_mail}
+    ports:
+     - ${client_port}:3000
+
+postgres:
+    image: postgres:9.4.8
+    environment:
+      - POSTGRES_USER=${db_user}
+    volumes:
+      - discourse_db:/var/lib/postgresql/data
+
+redis:
+    image: redis:3

@@ -1,5 +1,5 @@
 name: Gogs
 description: |
     Un servidor Git en tu propia infraestructura fácil de gestionar, como Github.
-version: v0.8.43
+version: v0.1-educaas
 category: Git

@@ -1,0 +1,54 @@
+.catalog:
+  name: "Discourse"
+  version: v0.1-educaas
+  description: "Un foro para conversar civilizadamente con muchos plugins."
+  uuid: discourse-0
+  questions:
+    - variable: client_port
+      description: "Port to access discourse webui"
+      label: "Client Port"
+      required: true
+      default: "10081"
+      type: "int"
+    - variable: db_user
+      description: "Database username"
+      label: "DB username"
+      required: true
+      default: "discourse"
+      type: "string"
+    - variable: smtp_server
+      description: "Mail SMTP server"
+      label: "SMTP server"
+      required: true
+      default: "smtp.example.com"
+      type: "string"
+    - variable: smtp_port
+      description: "Port to access SMTP server"
+      label: "SMTP Port"
+      required: true
+      default: "25"
+      type: "int"
+    - variable: smtp_username
+      description: "SMTP username"
+      label: "SMTP username"
+      required: true
+      default: "user@example.com"
+      type: "string"
+    - variable: smtp_password
+      description: "SMTP password to access mail"
+      label: "SMTP password"
+      required: true
+      default: "password"
+      type: "password"
+    - variable: hostname
+      description: "Host name or domain"
+      label: "Server Name"
+      required: true
+      default: "foro.educaas.io"
+      type: "string"
+    - variable: admin_mail
+      description: "Admin mail"
+      label: "Administrator mail"
+      required: true
+      default: "user@educaas.io"
+      type: "string"

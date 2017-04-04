@@ -1,6 +1,6 @@
 .catalog:
   name: "Gogs"
-  version: "v0.8.43"
+  version: v0.1-educaas
   description: "Un servidor Git en tu propia infraestructura fácil de gestionar, como Github."
   uuid: gogs-0
   questions:

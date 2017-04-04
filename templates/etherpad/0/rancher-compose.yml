@@ -27,10 +27,10 @@
       label: "Admin password"
       required: true
       default: "changeme1"
-      type: "string"
+      type: "password"
     - variable: root_pswd
       description: "Root password to access DB"
       label: "Root password"
       required: true
       default: "changeme1"
-      type: "string"
+      type: "password"
