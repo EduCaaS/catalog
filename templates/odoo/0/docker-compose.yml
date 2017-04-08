@@ -8,9 +8,9 @@ odoo:
     - odoo_webdata:/var/lib/odoo
     - odoo_config:/etc/odoo
     - odoo_addons:/mnt/extra-addons
-    labels:
+    #labels:
     # Make db only run on hosts that do not have a availability=temporal label
-    io.rancher.scheduler.affinity:host_label: availability=permanent
+    #io.rancher.scheduler.affinity:host_label: availability=permanent
 
 db:
   image: postgres
@@ -21,4 +21,4 @@ db:
     - odoo_dbdata:/var/lib/postgresql/data/pgdata
   labels:
     # Make db only run on hosts that do not have a availability=temporal label
-    io.rancher.scheduler.affinity:host_label: availability=permanent
+    #io.rancher.scheduler.affinity:host_label: availability=permanent
