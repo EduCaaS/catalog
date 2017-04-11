@@ -18,3 +18,11 @@ db:
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
+code:
+  image: collabora/code
+  environment:
+    - domain=${escaped_domain}
+    - username=${username_office}
+    - password=${password_office}
+  cap_add:
+    - MKNOD

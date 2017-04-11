@@ -18,3 +18,21 @@
       required: true
       default: "password"
       type: "password"
+    - variable: escaped_domain
+      description: "Office domain in escaped format"
+      label: "Escaped domain"
+      required: true
+      default: office\\.example\\.com
+      type: "string"
+    - variable: username_office
+      description: "Office admin user name"
+      label: "Admin username"
+      required: true
+      default: admin
+      type: "string"
+    - variable: password_office
+      description: "Office admin password"
+      label: "Admin password"
+      required: true
+      default: password
+      type: "password" 
