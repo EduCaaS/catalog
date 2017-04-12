@@ -27,7 +27,7 @@ nextcloud:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
 db:
-  image: mariadb
+  image: mariadb:10
   environment:
     - MYSQL_ROOT_PASSWORD=${db_password}
     - MYSQL_DATABASE=nextcloud
