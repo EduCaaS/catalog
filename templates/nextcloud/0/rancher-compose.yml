@@ -1,6 +1,6 @@
 .catalog:
   name: "Nextcloud"
-  version: "v0.1-educaas"
+  version: v0.1-educaas
   description: "Servicio de alojamiento de archivos alternativo a Dropbox"
   uuid: nextcloud-0
   questions:
