@@ -3,7 +3,6 @@
   version: "v0.1-educaas"
   description: "Servicio de alojamiento de archivos alternativo a Dropbox"
   uuid: nextcloud-0
-  minimum_rancher_version: v0.51.0
   questions:
     - variable: client_port
       description: "Port to access Owncloud"
@@ -46,4 +45,4 @@
       label: "Admin password"
       required: true
       default: password
-      type: "password" 
+      type: "password"
