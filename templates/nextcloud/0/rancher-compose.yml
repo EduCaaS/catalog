@@ -19,7 +19,7 @@
       default: "password"
       type: "password"
     - variable: escaped_domain
-      description: "Office domain in escaped format"
+      description: "Cloud domain in escaped format"
       label: "Escaped domain"
       required: true
       default: office\\.example\\.com
