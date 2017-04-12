@@ -18,6 +18,13 @@ db:
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
+proxy:
+    image: nginx
+    links:
+      - code
+    environment:
+      - VIRTUAL_HOST=${domain}
+
 code:
   image: collabora/code
   ports:

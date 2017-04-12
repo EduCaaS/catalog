@@ -24,6 +24,12 @@
       required: true
       default: office\\.example\\.com
       type: "string"
+    - variable: domain
+      description: "Office domain"
+      label: "Domain"
+      required: true
+      default: office.example.com
+      type: "string"
     - variable: username_office
       description: "Office admin user name"
       label: "Admin username"
