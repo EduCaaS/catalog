@@ -3,7 +3,7 @@ nextcloud:
   ports:
     - ${client_port}:8888
   links:
-    - db
+    - nextcloud-db
   volumes:
     - nextcloud_data:/data
     - nextcloud_config:/config
@@ -22,11 +22,11 @@ nextcloud:
     - DB_NAME=nextcloud
     - DB_USER=nextcloud
     - DB_PASSWORD=${db_password}
-    - DB_HOST=db
+    - DB_HOST=nextcloud-db
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
-db:
+nextcloud-db:
   image: mariadb:10
   environment:
     - MYSQL_ROOT_PASSWORD=${db_password}
