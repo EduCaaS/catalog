@@ -20,6 +20,8 @@ db:
 
 code:
   image: collabora/code
+  expose:
+    - "9980"
   environment:
     - domain=${escaped_domain}
     - username=${username_office}
