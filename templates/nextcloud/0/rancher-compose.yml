@@ -1,10 +1,9 @@
 .catalog:
-  name: "Owncloud"
+  name: "Nextcloud"
   version: "v0.1-educaas"
   description: "Servicio de alojamiento de archivos alternativo a Dropbox"
-  uuid: owncloud-0
+  uuid: nextcloud-0
   minimum_rancher_version: v0.51.0
-  questions:
   questions:
     - variable: client_port
       description: "Port to access Owncloud"
@@ -23,6 +22,12 @@
       label: "Escaped domain"
       required: true
       default: office\\.example\\.com
+      type: "string"
+    - variable: cloud_domain
+      description: "Nextcloud domain"
+      label: "Cloud domain"
+      required: true
+      default: cloud.example.com
       type: "string"
     - variable: domain
       description: "Office domain"
