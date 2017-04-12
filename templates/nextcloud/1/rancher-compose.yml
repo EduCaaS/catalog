@@ -1,6 +1,6 @@
 .catalog:
-  name: "Owncloud"
-  version: "v0.1-educaas"
+  name: "Nextcloud"
+  version: "v0.2-educaas"
   description: "Servicio de alojamiento de archivos alternativo a Dropbox"
   uuid: owncloud-0
   minimum_rancher_version: v0.51.0
