@@ -11,7 +11,7 @@ services:
       - SYMFONY__ENV__DATABASE_USER=wallabag
       - SYMFONY__ENV__DATABASE_PASSWORD=${password}
     ports:
-      - ${client_pot}:80
+      - ${client_port}:80
     labels:
       # Make db only run on hosts that do not have a availability=temporal label
       io.rancher.scheduler.affinity:host_label: availability=permanent
