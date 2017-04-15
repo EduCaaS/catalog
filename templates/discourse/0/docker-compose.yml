@@ -1,5 +1,6 @@
 app:
     image: dalareo/discourse
+    command: bash -c "sleep 3 && rake db:migrate assets:precompile"
     volumes:
       - discourse_assets:/usr/src/app/public/assets
       - discourse_uploads:/usr/src/app/public/uploads
