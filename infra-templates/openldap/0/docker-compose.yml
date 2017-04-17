@@ -5,11 +5,11 @@ services:
     container_name: openldap
     environment:
       LDAP_LOG_LEVEL: "256"
-      LDAP_ORGANISATION: "Example Inc."
-      LDAP_DOMAIN: "example.org"
-      LDAP_BASE_DN: ""
-      LDAP_ADMIN_PASSWORD: "admin"
-      LDAP_CONFIG_PASSWORD: "config"
+      LDAP_ORGANISATION: ${organization}
+      LDAP_DOMAIN: ${domain}
+      LDAP_BASE_DN: ${base_dn}
+      LDAP_ADMIN_PASSWORD: ${admin_password}
+      LDAP_CONFIG_PASSWORD: ${config_password}
       LDAP_READONLY_USER: "false"
       #LDAP_READONLY_USER_USERNAME: "readonly"
       #LDAP_READONLY_USER_PASSWORD: "readonly"
@@ -31,13 +31,13 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - /var/lib/ldap
-      - /etc/ldap/slapd.d
-      - /container/service/slapd/assets/certs/
+      - ldap_directory:/var/lib/ldap
+      - ldap_config:/etc/ldap/slapd.d
+      - ldap_certs:/container/service/slapd/assets/certs/
     ports:
-      - "389:389"
+      - "${port}:389"
       - "639:639"
-    hostname: "example.org"
+    hostname: ${domain}
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
 
@@ -48,7 +48,7 @@ services:
       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
       PHPLDAPADMIN_HTTPS: "false"
     ports:
-      - "8080:80"
+      - ${admin_port:80
     depends_on:
       - openldap
     labels:
