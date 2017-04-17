@@ -35,7 +35,7 @@ services:
       - ldap_config:/etc/ldap/slapd.d
       - ldap_certs:/container/service/slapd/assets/certs/
     ports:
-      - "${port}:389"
+      - "${ldap_port}:389"
       - "639:639"
     hostname: ${domain}
     labels:
@@ -48,7 +48,7 @@ services:
       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
       PHPLDAPADMIN_HTTPS: "false"
     ports:
-      - ${admin_port:80
+      - ${admin_port}:80
     depends_on:
       - openldap
     labels:
