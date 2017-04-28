@@ -1,18 +1,24 @@
 .catalog:
   name: "Odoo"
   version: v0.1-educaas
-  description: "Sistema de gestión integral de los recursos de una empresa, como Microsoft SAP."
+  description: "Gestión de recursos y proyectos con Odoo"
   uuid: odoo-0
   questions:
     - variable: client_port
-      description: "Port to access Odoo"
+      description: "Port to access Odoo UI"
       label: "Client Port"
       required: true
       default: "8069"
       type: "int"
-    - variable: db_password
-      description: "Password for database"
-      label: "Password (default: odoo)"
+    - variable: db_user
+      description: "Database username"
+      label: "DB username"
       required: true
       default: "odoo"
+      type: "string"
+    - variable: db_password
+      description: "Database password"
+      label: "DB password"
+      required: true
+      default: "password"
       type: "password"
