@@ -15,4 +15,4 @@
       label: "Mysql Password"
       required: true
       default: "password"
-      type: "string"
+      type: "password"
