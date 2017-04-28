@@ -1,0 +1,12 @@
+.catalog:
+  name: "Wekan"
+  version: "v0.1-educaas"
+  description: "Alternativa libre a Trello"
+  uuid: wekan-00
+  questions:
+    - variable: client_port
+      description: "Port to access Wekan"
+      label: "Client Port"
+      required: true
+      default: "3003"
+      type: "int"
