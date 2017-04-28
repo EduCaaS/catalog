@@ -10,3 +10,9 @@
       required: true
       default: "3003"
       type: "int"
+    - variable: site_url
+      description: "URL to access Wekan"
+      label: "Site URL"
+      required: true
+      default: "https://agile.example.com"
+      type: "string"

@@ -11,6 +11,6 @@ app:
     - db
   environment:
     - MONGO_URL=mongodb://db/app
-    - ROOT_URL=http://localhost:${client_port}
+    - ROOT_URL=${site_url}
   ports:
     - ${client_port}:80
