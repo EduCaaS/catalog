@@ -54,15 +54,15 @@ services:
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
 
-  selfservicepasswordnginx:
+  sspdnginx:
     image: dalareo/selfservicepassword_nginx
     hostname: ${selfservicehostname}
     volumes_from:
-      - selfservicepassword
+      - ssp
     ports:
       - "${selfservice_port}:80"
 
-  selfservicepassword:
+  ssp:
     image: moss/selfservicepassword
     hostname: ${selfservicehostname}
     environment:
