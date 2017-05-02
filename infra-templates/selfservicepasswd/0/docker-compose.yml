@@ -2,14 +2,14 @@ sspnginx:
     image: dalareo/sspnginx
     hostname: ${selfservicehostname}
     volumes_from:
-      - ssp
+      - php
     ports:
       - ${selfservice_port}:80
     labels:
-      io.rancher.sidekicks: ssp
+      io.rancher.sidekicks: php
       io.rancher.scheduler.affinity:host_label: availability=permanent
 
-ssp:
+php:
     image: moss/selfservicepassword
     hostname: ${selfservicehostname}
     environment:
