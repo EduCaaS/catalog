@@ -58,7 +58,7 @@ services:
     image: dalareo/selfservicepassword_nginx
     hostname: ${selfservicehostname}
     volumes_from:
-      - php
+      - selfservicepassword
     ports:
       - "${selfservice_port}:80"
 
