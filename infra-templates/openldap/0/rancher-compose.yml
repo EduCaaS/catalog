@@ -46,27 +46,3 @@
       required: true
       default: "10000"
       type: "int"
-    - variable: selfservice_port
-      description: "Self Service Password UI port"
-      label: "Password UI Port"
-      required: true
-      default: "10008"
-      type: "int"
-    - variable: selfservicehostname
-      description: "Self service password hostname"
-      label: "Password change hostname"
-      required: true
-      default: "reset.example.org"
-      type: "string"
-    - variable: ldap_server
-      description: "LDAP server url or domain name"
-      label: "LDAP server"
-      required: true
-      default: "ldap://ip"
-      type: "string"
-    - variable: bind_dn
-      description: "Bind DN credentials"
-      label: "Bind DN"
-      required: true
-      default: "cn=admin,dc=example,dc=org"
-      type: "string"
