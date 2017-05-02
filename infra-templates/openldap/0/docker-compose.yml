@@ -53,3 +53,23 @@ services:
       - openldap
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
+
+  selfservicepasswordnginx:
+    image: dalareo/selfservicepassword_nginx
+    hostname: ${selfservicehostname}
+    volumes_from:
+      - php
+    ports:
+      - "${selfservice_port}:80"
+
+  selfservicepassword:
+    image: moss/selfservicepassword
+    hostname: ${selfservicehostname}
+    environment:
+      - LDAP_SERVER=${ldap_server}
+      - LDAP_STARTTLS=false
+      - LDAP_BINDDN=${bind_dn}
+      - LDAP_BINDPASS=${bind_dn_password}
+      - LDAP_BASE_SEARCH=${base_dn}
+      - LDAP_LOGIN_ATTRIBUTE=uid
+      - LDAP_FULLNAME_ATTRIBUTE=cn

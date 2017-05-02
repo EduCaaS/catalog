@@ -46,3 +46,33 @@
       required: true
       default: "10000"
       type: "int"
+    - variable: selfservicehostname
+      description: "Self service password hostname"
+      label: "Password change hostname"
+      required: true
+      default: "reset.example.org"
+      type: "string"
+    - variable: ldap_server
+      description: "LDAP server url or domain name"
+      label: "LDAP server"
+      required: true
+      default: "ldap://ip"
+      type: "string"
+    - variable: bind_dn
+      description: "Bind DN credentials"
+      label: "Bind DN"
+      required: true
+      default: "cn=admin,dc=example,dc=org"
+      type: "string"
+    - variable: bind_dn_password
+      description: "Bind DN password"
+      label: "Password"
+      required: true
+      default: "password"
+      type: "password"
+    - variable: ldap_server
+      description: "Base Domain Name"
+      label: "Base DN"
+      required: true
+      default: "dc=example,dc=org"
+      type: "string"
