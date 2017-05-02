@@ -69,7 +69,7 @@ services:
       - LDAP_SERVER=${ldap_server}
       - LDAP_STARTTLS=false
       - LDAP_BINDDN=${bind_dn}
-      - LDAP_BINDPASS=${bind_dn_password}
+      - LDAP_BINDPASS=${admin_password}
       - LDAP_BASE_SEARCH=${base_dn}
       - LDAP_LOGIN_ATTRIBUTE=uid
       - LDAP_FULLNAME_ATTRIBUTE=cn

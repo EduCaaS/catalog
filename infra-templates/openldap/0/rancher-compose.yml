@@ -70,15 +70,3 @@
       required: true
       default: "cn=admin,dc=example,dc=org"
       type: "string"
-    - variable: bind_dn_password
-      description: "Bind DN password"
-      label: "Password"
-      required: true
-      default: "password"
-      type: "password"
-    - variable: ldap_server
-      description: "Base Domain Name"
-      label: "Base DN"
-      required: true
-      default: "dc=example,dc=org"
-      type: "string"
