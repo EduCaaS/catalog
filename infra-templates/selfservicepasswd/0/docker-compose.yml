@@ -1,7 +1,7 @@
 sspnginx:
     image: dalareo/sspnginx
     hostname: ${selfservicehostname}
-    volumes_from:
+    volumes:
       - ssp_data:/var/www/html
     ports:
       - ${selfservice_port}:80
