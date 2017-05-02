@@ -54,8 +54,8 @@ services:
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
 
-  sspdnginx:
-    image: dalareo/selfservicepassword_nginx
+  sspnginx:
+    image: dalareo/sspnginx
     hostname: ${selfservicehostname}
     volumes_from:
       - ssp
