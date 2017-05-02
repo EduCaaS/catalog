@@ -4,7 +4,7 @@ sspnginx:
     volumes_from:
       - ssp
     ports:
-      - "${selfservice_port}:80"
+      - ${selfservice_port}:80
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
 
