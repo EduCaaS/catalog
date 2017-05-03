@@ -1,0 +1,5 @@
+name: SimpleSAMLphp
+description: |
+  Servicio de single sign on basado en SAML
+version: v0.1-educaas
+category: Admin

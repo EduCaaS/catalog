@@ -1,0 +1,12 @@
+.catalog:
+  name: "SimpleSAMLphp"
+  version: v0.1-educaas
+  description: "Servicio de single sign on basado en SAML"
+  minimum_rancher_version: v1.0.0-rc2
+  questions:
+    - variable: saml_port
+      description: "SAML access port"
+      label: "port"
+      required: true
+      default: "8888"
+      type: "int"
