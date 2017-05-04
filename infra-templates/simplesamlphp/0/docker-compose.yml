@@ -4,7 +4,8 @@
     stdin_open: true
     volumes:
       - saml_config:/var/simplesamlphp/config
+      - saml_metadata:/var/simplesamlphp/metadata
     ports:
-      - "${saml_port}:80"
+      - "${saml_port}:443"
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
