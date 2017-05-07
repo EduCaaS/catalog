@@ -21,6 +21,7 @@ etherpad:
      ETHERPAD_SESSION_KEY: ${session_key}
    volumes:
       - etherpad_settings:/opt/etherpad-lite/var
+      - etherpad_code:/opt/etherpad-lite/src
    links:
      - mysql:mysql
    labels:
