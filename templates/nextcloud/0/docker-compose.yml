@@ -10,13 +10,13 @@ nextcloud:
     - nextcloud_apps:/apps2
     - nextcloud_themes:/nextcloud/themes
   environment:
-#    - UID=1000
-#    - GID=1000
-#    - UPLOAD_MAX_SIZE=10G
-#    - APC_SHM_SIZE=128M
-#    - OPCACHE_MEM_SIZE=128
-#    - CRON_PERIOD=15m
-#    - TZ=Europe/Berlin
+    - UID=1000
+    - GID=1000
+    - UPLOAD_MAX_SIZE=10G
+    - APC_SHM_SIZE=128M
+    - OPCACHE_MEM_SIZE=128
+    - CRON_PERIOD=15m
+    - TZ=Europe/Berlin
     - DOMAIN=${cloud_domain}
     - DB_TYPE=mysql
     - DB_NAME=nextcloud
