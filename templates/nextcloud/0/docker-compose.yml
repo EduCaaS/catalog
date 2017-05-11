@@ -3,11 +3,11 @@ app:
   links:
     - db
   volumes:
-    - nextcloud_data:/usr/src/nextcloud/data
-    - nextcloud_config:/usr/src/nextcloud/config
-    - nextcloud_apps:/usr/src/nextcloud/apps
-    - nextcloud_customapps:/usr/src/nextcloud/custom_apps
-    - nextcloud_themes:/usr/src/nextcloud/themes
+    - nextcloud_data:/var/www/html/data
+    - nextcloud_config:/var/www/html/config
+    - nextcloud_apps:/var/www/html/apps
+    - nextcloud_customapps:/var/www/html/custom_apps
+    - nextcloud_themes:/var/www/html/themes
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 
