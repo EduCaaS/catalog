@@ -4,12 +4,6 @@
   description: "Servicio de alojamiento de archivos alternativo a Dropbox"
   uuid: nextcloud-0
   questions:
-    - variable: client_port
-      description: "Port to access Owncloud"
-      label: "Client Port"
-      required: true
-      default: "80"
-      type: "int"
     - variable: db_password
       description: "Password for database"
       label: "Password (default: password)"
@@ -20,19 +14,13 @@
       description: "Cloud domain in escaped format"
       label: "Escaped domain"
       required: true
-      default: office\\.example\\.com
-      type: "string"
-    - variable: cloud_domain
-      description: "Nextcloud domain"
-      label: "Cloud domain"
-      required: true
-      default: cloud.example.com
+      default: cloud\\.example\\.com
       type: "string"
     - variable: domain
-      description: "Office domain"
+      description: "Cloud domain"
       label: "Domain"
       required: true
-      default: office.example.com
+      default: cloud.example.com
       type: "string"
     - variable: username_office
       description: "Office admin user name"

@@ -124,7 +124,7 @@ And reload your nginx config using sudo nginx -s reload.
 
 Go to the Apps section and choose "Productivity"
 Install the "Collabora Online" app
-In Admin -> Collabora Online specific the URL of the server you have setup before (https://office.example.com), without the end slash.
+In Admin -> Collabora Online specific the URL of your domain (https://office.example.com), without the end slash.
 
 Enjoy
 
