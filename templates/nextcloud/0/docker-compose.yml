@@ -24,7 +24,7 @@ db:
 nginx:
     image: dalareo/nextcloud-nginx
     links:
-      - code
+      - collabora
       - app
     environment:
       - VIRTUAL_HOST=${domain}
