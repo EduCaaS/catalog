@@ -4,12 +4,6 @@
   description: "Un servidor Git en tu propia infraestructura fácil de gestionar, como Github."
   uuid: gogs-0
   questions:
-    - variable: http_port
-      description: "http port to access gogs webui"
-      label: "Http Port"
-      required: true
-      default: "10080"
-      type: "int"
     - variable: mysql_password
       description: "mysql root password"
       label: "Mysql Password"

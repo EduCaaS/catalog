@@ -1,7 +1,5 @@
 gogs:
     image: gogs/gogs:latest
-    ports:
-        - ${http_port}:3000
     links:
         - mysql:db
     volumes:

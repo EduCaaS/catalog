@@ -23,8 +23,6 @@ rocketchat:
     - MONGO_URL=mongodb://mongo:27017/rocketchat
   links:
     - mongo:mongo
-  ports:
-    - 3000:3000
   labels:
     io.rancher.scheduler.affinity:host_label: availability=permanent
 

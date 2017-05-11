@@ -3,8 +3,6 @@ services:
 
   hublin:
     image: linagora/hublin
-    ports:
-      - ${client_port}:8080
     links:
       - db:db
       - redis:redis

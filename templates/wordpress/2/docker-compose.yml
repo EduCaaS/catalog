@@ -4,8 +4,6 @@ wordpress:
   stdin_open: true
   links:
     - database:mysql
-  ports:
-    - ${client_port}:80
   volumes:
     - wp_files:/var/www/html
   labels:
