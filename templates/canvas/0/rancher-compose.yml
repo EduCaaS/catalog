@@ -4,12 +4,6 @@
   description: "Herramienta de cocreación y acompañamiento de sesiones."
   uuid: canvas-0
   questions:
-    - variable: client_port
-      description: "Port to access App"
-      label: "Client Port"
-      required: true
-      default: "9007"
-      type: "int"
     - variable: app_url
       description: "Address of your App"
       label: "App URL"
