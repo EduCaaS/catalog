@@ -5,7 +5,7 @@
 Add this nginx.conf to the proxy container running NGINX:
 
 ```
-user nobody;
+user www-data;
 
 events {
   worker_connections 768;
@@ -19,7 +19,7 @@ http {
   default_type application/octet-stream;
 
   server {
-    listen 443;
+    listen 80;
 
     # Add headers to serve security related headers
     add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";
