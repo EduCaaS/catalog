@@ -1,4 +1,4 @@
-sspnginx:
+nginx:
     image: dalareo/sspnginx
     hostname: ${selfservicehostname}
     volumes:
