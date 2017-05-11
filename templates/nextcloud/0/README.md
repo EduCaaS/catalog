@@ -5,7 +5,7 @@
 Add this nginx.conf to the proxy container running NGINX:
 
 ```
-user www-data;
+user nobody;
 
 events {
   worker_connections 768;
