@@ -13,8 +13,6 @@ etherpad:
    tty: true
    image: tvelocity/etherpad-lite
    stdin_open: true
-   ports:
-     - ${client_port}:9001
    environment:
      ETHERPAD_TITLE: ${title}
      ETHERPAD_ADMIN_PASSWORD: ${admin_pswd}

@@ -4,12 +4,6 @@
   description: "Edita documentos entre varias personas en tiempo real como Google Drive."
   uuid: etherpad-0
   questions:
-    - variable: client_port
-      description: "Port to access Etherpad"
-      label: "Client Port"
-      required: true
-      default: "9001"
-      type: "int"
     - variable: title
       description: "Etherpad site title"
       label: "Site Title"
