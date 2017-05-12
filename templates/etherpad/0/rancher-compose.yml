@@ -15,7 +15,7 @@
       label: "Session key"
       required: true
       default: "thisisthesessionkey"
-      type: "string"
+      type: "password"
     - variable: admin_pswd
       description: "Password to access to /admin section"
       label: "Admin password"
