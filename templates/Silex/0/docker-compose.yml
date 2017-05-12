@@ -1,4 +1,4 @@
-svgedit:
+silex:
   tty: true
   image: silexlabs/silex
   stdin_open: true
