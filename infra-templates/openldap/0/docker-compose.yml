@@ -36,7 +36,7 @@ services:
       - ldap_certs:/container/service/slapd/assets/certs/
     ports:
       - "${ldap_port}:389"
-      - "639:639"
+      - "636:636"
     hostname: ${domain}
     labels:
       io.rancher.scheduler.affinity:host_label: availability=permanent
