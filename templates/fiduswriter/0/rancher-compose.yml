@@ -52,3 +52,9 @@
       required: true
       default: "25"
       type: "string"
+    - variable: HOSTNAME
+      description: "Hostname or IP of the installation"
+      label: "Domain"
+      required: true
+      default: fidus.example.com
+      type: "string"
