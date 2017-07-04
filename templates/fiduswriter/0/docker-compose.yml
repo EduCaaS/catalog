@@ -20,7 +20,7 @@ fiduswriter:
    volumes:
      - fidus-data:/data
    environment:
-     # TEST_SERVER: True
+     TEST_SERVER: False
      CONTACT_MAIL: ${EMAIL_FROM}
      DB_NAME: ${db_name}
      DB_USER: ${db_user}
