@@ -24,6 +24,7 @@ fiduswriter:
      DB_NAME: ${db_name}
      DB_USER: ${db_user}
      DB_PASS: ${db_password}
+     DB_HOST: postgresql
      SMTP_HOST: ${SMTP_HOST}
      SMTP_USER: ${SMTP_USER}
      SMTP_PASS: ${SMTP_PASS}
