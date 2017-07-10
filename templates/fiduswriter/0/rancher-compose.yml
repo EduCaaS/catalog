@@ -22,6 +22,12 @@
       required: true
       default: "user"
       type: "string"
+    - variable: CONTACT_EMAIL
+      description: "Email address to contact"
+      label: "Contact"
+      required: true
+      default: "user@example.com"
+      type: "string"
     - variable: EMAIL_FROM
       description: "Email address to send emails from"
       label: "Email"

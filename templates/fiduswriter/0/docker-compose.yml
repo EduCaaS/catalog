@@ -20,7 +20,7 @@ fiduswriter:
    volumes:
      - fidus-data:/fiduswriter
    environment:
-     CONTACT_MAIL: ${EMAIL_FROM}
+     CONTACT_EMAIL: ${CONTACT_EMAIL}
      DB_NAME: ${db_name}
      DB_USER: ${db_user}
      DB_PASS: ${db_password}
