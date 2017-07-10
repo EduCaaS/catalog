@@ -19,6 +19,7 @@ fiduswriter:
      - postgresql
    volumes:
      - fidus-data:/fiduswriter
+   entrypoint: /fiduswriter/docker-entrypoint.sh
    environment:
      CONTACT_EMAIL: ${CONTACT_EMAIL}
      DB_NAME: ${db_name}
