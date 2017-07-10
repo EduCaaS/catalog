@@ -30,7 +30,7 @@ fiduswriter:
      SMTP_USER: ${SMTP_USER}
      SMTP_PASS: ${SMTP_PASS}
      SMTP_PORT: ${SMTP_PORT}
-     TLS_TRUE: 'False'
+     TLS_TRUE: 'True'
      EMAIL_FROM: ${EMAIL_FROM}
      ADMIN_NAME: ${ADMIN_NAME}
      HOSTNAME: ${HOSTNAME}
