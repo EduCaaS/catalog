@@ -52,6 +52,12 @@
       required: true
       default: "25"
       type: "string"
+    - variable: ADMIN_NAME
+      description: "Administrator name"
+      label: "Admin name"
+      required: true
+      default: "Admin"
+      type: "string"
     - variable: HOSTNAME
       description: "Hostname or IP of the installation"
       label: "Domain"

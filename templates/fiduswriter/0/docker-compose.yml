@@ -31,6 +31,7 @@ fiduswriter:
      SMTP_PORT: ${SMTP_PORT}
      TLS_TRUE: 'False'
      EMAIL_FROM: ${EMAIL_FROM}
+     ADMIN_NAME: ${ADMIN_NAME}
      HOSTNAME: ${HOSTNAME}
    labels:
      io.rancher.scheduler.affinity:host_label: availability=permanent
