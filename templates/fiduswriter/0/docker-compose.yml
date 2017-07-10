@@ -18,7 +18,7 @@ fiduswriter:
    links:
      - postgresql
    volumes:
-     - fidus-data:/data
+     - fidus-data:/fiduswriter
    environment:
      TEST_SERVER: False
      CONTACT_MAIL: ${EMAIL_FROM}
