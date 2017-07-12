@@ -18,8 +18,8 @@ fiduswriter:
    links:
      - postgresql
    volumes:
-     - fidus-data:/fiduswriter
-   entrypoint: /fiduswriter/docker-entrypoint.sh
+     - fidus-data:/code
+   command: ./manage.py runserver
    environment:
      CONTACT_EMAIL: ${CONTACT_EMAIL}
      DB_NAME: ${db_name}
