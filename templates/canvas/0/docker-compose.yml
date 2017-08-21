@@ -1,5 +1,5 @@
 dashboard:
-  image: dalareo/creative-canvas:selector
+  image: dalareo/creative-canvas:custom-background
   links:
    - mongo
   environment:
