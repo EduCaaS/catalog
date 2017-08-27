@@ -1,7 +1,3 @@
-version: '3.3'
-
-services:
-
   zammad:
     depends_on:
       - zammad-elasticsearch
