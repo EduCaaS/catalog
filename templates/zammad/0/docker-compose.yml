@@ -14,7 +14,7 @@ zammad:
 zammad-backup:
     links:
       - zammad
-      - zammad-portgresql
+      - zammad-postgresql
     image: zammad/zammad-docker-compose:zammad-backup
     labels:
       io.rancher.container.pull_image: always
