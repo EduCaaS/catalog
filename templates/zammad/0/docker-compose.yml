@@ -90,11 +90,3 @@ zammad-websocket:
     restart: always
     volumes:
       - data-zammad:/home/zammad
-
-volumes:
-  backup-zammad:
-    driver: local
-  data-zammad:
-    driver: local
-  data-elasticsearch:
-    driver: local
