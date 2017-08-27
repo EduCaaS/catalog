@@ -1,4 +1,4 @@
-slides:
+laverna:
   tty: true
   image: dalareo/static-laverna
   stdin_open: true
