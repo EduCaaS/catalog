@@ -1,4 +1,4 @@
-  zammad:
+zammad:
     depends_on:
       - zammad-elasticsearch
       - zammad-postgresql
@@ -11,7 +11,7 @@
     volumes:
       - data-zammad:/home/zammad
 
-  zammad-backup:
+zammad-backup:
     depends_on:
       - zammad
     image: zammad/zammad-docker-compose:zammad-backup
@@ -25,7 +25,7 @@
       - data-zammad:/home/zammad
       - backup-zammad:/var/tmp/zammad
 
-  zammad-elasticsearch:
+zammad-elasticsearch:
     image: zammad/zammad-docker-compose:zammad-elasticsearch
     labels:
       io.rancher.container.pull_image: always
@@ -34,7 +34,7 @@
     volumes:
       - data-elasticsearch:/usr/share/elasticsearch/data
 
-  zammad-nginx:
+zammad-nginx:
     depends_on:
       - zammad
     image: zammad/zammad-docker-compose:zammad-nginx
@@ -48,14 +48,14 @@
     volumes:
       - data-zammad:/home/zammad
 
-  zammad-postgresql:
+zammad-postgresql:
     image: zammad/zammad-docker-compose:zammad-postgresql
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: availability=permanent
     restart: always
 
-  zammad-railsserver:
+zammad-railsserver:
     depends_on:
       - zammad
     image: zammad/zammad-docker-compose:zammad-railsserver
@@ -71,7 +71,7 @@
     volumes:
       - data-zammad:/home/zammad
 
-  zammad-scheduler:
+zammad-scheduler:
     depends_on:
       - zammad
     image: zammad/zammad-docker-compose:zammad-scheduler
@@ -85,7 +85,7 @@
     volumes:
       - data-zammad:/home/zammad
 
-  zammad-websocket:
+zammad-websocket:
     depends_on:
       - zammad
     image: zammad/zammad-docker-compose:zammad-websocket
