@@ -1,4 +1,4 @@
-slides:
+loopy:
   tty: true
   image: dalareo/loopy
   stdin_open: true
