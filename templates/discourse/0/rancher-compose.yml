@@ -34,3 +34,9 @@
       required: true
       default: "password"
       type: "password"
+    - variable: db_password
+      description: "DB password"
+      label: "DB password"
+      required: true
+      default: "password"
+      type: "password"
