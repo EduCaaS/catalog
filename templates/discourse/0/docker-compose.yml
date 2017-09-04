@@ -6,6 +6,10 @@ discourse:
       - postgresql
       - redis
     environment:
+      - DISCOURSE_USERNAME=admin
+      - DISCOURSE_PASSWORD=${db_password}
+      - DISCOURSE_EMAIL=${site_mail}
+      - DISCOURSE_SITENAME=${site_name}
       - POSTGRESQL_HOST=postgresql
       - POSTGRESQL_ROOT_USER=postgres
       - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_application

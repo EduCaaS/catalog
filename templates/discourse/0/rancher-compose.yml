@@ -4,6 +4,18 @@
   description: "Un foro para conversar civilizadamente con muchos plugins."
   uuid: discourse-0
   questions:
+    - variable: site_mail
+      description: "Email of the site for sending notifications"
+      label: "Email address"
+      required: false
+      default: "user@example.com"
+      type: "string"
+    - variable: site_name
+      description: "Name of the site"
+      label: "Site name"
+      required: false
+      default: "My site"
+      type: "string"
     - variable: client_port
       description: "Port to access discourse webui"
       label: "Client Port"
