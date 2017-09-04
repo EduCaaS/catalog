@@ -3,7 +3,7 @@ discourse:
     volumes:
       - discourse_data:/bitnami
     links:
-      - postgres
+      - postgresql
       - redis
     environment:
       - POSTGRESQL_HOST=postgresql
