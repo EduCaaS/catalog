@@ -10,12 +10,6 @@
       required: false
       default: "user@example.com"
       type: "string"
-    - variable: site_name
-      description: "Name of the site"
-      label: "Site name"
-      required: false
-      default: "My site"
-      type: "string"
     - variable: client_port
       description: "Port to access discourse webui"
       label: "Client Port"
