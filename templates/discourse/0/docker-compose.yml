@@ -1,37 +1,41 @@
 app:
-    image: dalareo/discourse
-    command: bash -c "sleep 3 && rake db:migrate assets:precompile"
+    image: bitnami/discourse:latest
     volumes:
-      - discourse_assets:/usr/src/app/public/assets
-      - discourse_uploads:/usr/src/app/public/uploads
-      - discourse_backups:/usr/src/app/public/backups
+      - discourse_data:/bitnami
     links:
       - postgres
       - redis
     environment:
-      - DISCOURSE_SMTP_ADDRESS=${smtp_server}
-      - DISCOURSE_SMTP_PORT=${smtp_port}
-      - DISCOURSE_SMTP_USER_NAME=${smtp_username}
-      - DISCOURSE_SMTP_PASSWORD=${smtp_password}
-      - DISCOURSE_HOSTNAME=${hostname}
-      - DISCOURSE_DEVELOPER_EMAILS=${admin_mail}
+      - POSTGRESQL_HOST=postgres
+      - POSTGRESQL_ROOT_USER=postgres
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_application
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_USERNAME=bn_discourse
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_PASSWORD=${db_password}
+      - DISCOURSE_POSTGRESQL_NAME=bitnami_application
+      - DISCOURSE_POSTGRESQL_USERNAME=bn_discourse
+      - DISCOURSE_POSTGRESQL_PASSWORD=${db_password}
+      - SMTP_HOST=${smtp_server}
+      - SMTP_PORT=${smtp_port}
+      - SMTP_USER=${smtp_username}
+      - SMTP_PASSWORD=${smtp_password}
+      - SMTP_TLS=true
     ports:
      - ${client_port}:3000
     labels:
        # Make db only run on hosts that do not have a availability=temporal label
        io.rancher.scheduler.affinity:host_label: availability=permanent
 postgres:
-    image: postgres:9.4.8
-    environment:
-      - POSTGRES_USER=${db_user}
+    image: bitnami/postgresql:latest
     volumes:
-      - discourse_db:/var/lib/postgresql/data
+      - discourse_db:/bitnami
     labels:
        # Make db only run on hosts that do not have a availability=temporal label
        io.rancher.scheduler.affinity:host_label: availability=permanent
 
 redis:
-    image: redis:3
+    image: bitnami/redis:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
     labels:
        # Make db only run on hosts that do not have a availability=temporal label
        io.rancher.scheduler.affinity:host_label: availability=permanent

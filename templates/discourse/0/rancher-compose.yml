@@ -10,12 +10,6 @@
       required: true
       default: "10081"
       type: "int"
-    - variable: db_user
-      description: "Database username"
-      label: "DB username"
-      required: true
-      default: "discourse"
-      type: "string"
     - variable: smtp_server
       description: "Mail SMTP server"
       label: "SMTP server"
@@ -40,15 +34,3 @@
       required: true
       default: "password"
       type: "password"
-    - variable: hostname
-      description: "Host name or domain"
-      label: "Server Name"
-      required: true
-      default: "foro.educaas.io"
-      type: "string"
-    - variable: admin_mail
-      description: "Admin mail"
-      label: "Administrator mail"
-      required: true
-      default: "user@educaas.io"
-      type: "string"
