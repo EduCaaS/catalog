@@ -1,0 +1,43 @@
+.catalog:
+  name: "OSticket"
+  version: v0.1-educaas
+  description: "Gestiona la comunicación con tus clientes y ofrece soporte a través de la web"
+  uuid: osticket-0
+  questions:
+    - variable: db_password
+      description: "Password for database"
+      label: "Password"
+      required: true
+      default: "password"
+      type: "password"
+    - variable: smtp_host
+      description: "SMTP server name"
+      label: "SMTP host"
+      required: true
+      default: "smtp.example.com"
+      type: "string"
+    - variable: smtp_port
+      description: "SMTP port number"
+      label: "SMTP port"
+      required: true
+      default: "587"
+      type: "string"
+    - variable: smtp_from
+      description: "Send emails from address"
+      label: "Send from"
+      required: true
+      default: "user@example.com"
+      type: "string"
+    - variable: smtp_user
+      description: "SMTP user"
+      label: "SMTP user"
+      required: true
+      default: "user@example.com"
+      type: "string"
+    - variable: smtp_password
+      description: "SMTP password"
+      label: "SMTP pass"
+      required: true
+      default: "password"
+      type: "password"
+
