@@ -1,0 +1,18 @@
+.catalog:
+  name: "Loomio"
+  version: v0.1-educaas
+  description: "Tomemos las decisiones entre todos."
+  uuid: loomio-0
+  questions:
+    - variable: client_port
+      description: "Port to access loomio"
+      label: "Client Port"
+      required: true
+      default: "10088"
+      type: "int"
+    - variable: db_password
+      description: "DB password"
+      label: "DB password"
+      required: true
+      default: "password"
+      type: "password"
