@@ -7,6 +7,15 @@ loomio:
       - db
     environment:
       - DATABASE_URL=postgresql://postgres:${db_password}@db/lo
+      - SUPPORT_EMAIL=${smtp_user}
+      - SMTP_DOMAIN=${domain}
+      - SMTP_SERVER=${smtp_server}
+      - SMTP_PORT=${smtp_port}
+      - SMTP_USERNAME=${smtp_user}
+      - SMTP_PASSWORD=${smtp_password}
+      - REPLY_HOSTNAME=${domain}
+      - HELPER_BOT_EMAIL=${smtp_user}
+      - RAILS_ENV=production
     ports:
      - ${client_port}:3000
     labels:

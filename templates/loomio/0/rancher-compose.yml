@@ -16,3 +16,33 @@
       required: true
       default: "password"
       type: "password"
+    - variable: smtp_user
+      description: "SMTP user and support email"
+      label: "SMTP user"
+      required: true
+      default: "user@example.com"
+      type: "string"
+    - variable: smtp_password
+      description: "SMTP password"
+      label: "SMTP password"
+      required: true
+      default: "password"
+      type: "password"
+    - variable: smtp_port
+      description: "Port to access SMTP"
+      label: "SMTP Port"
+      required: true
+      default: "587"
+      type: "int"
+    - variable: domain
+      description: "Loomio installation domain"
+      label: "Domain"
+      required: true
+      default: "example.com"
+      type: "string"
+    - variable: smtp_server
+      description: "SMTP server address"
+      label: "SMTP server"
+      required: true
+      default: "smtp.example.com"
+      type: "string"
