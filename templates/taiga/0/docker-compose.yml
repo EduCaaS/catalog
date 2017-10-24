@@ -16,7 +16,7 @@ taiga:
   tty: true
   image: dalareo/taiga
   stdin_open: true
-  ports:
+  # ports:
     # - ${port}:80
     # - 443:443 # To enable SSL, uncomment this line
   links:
