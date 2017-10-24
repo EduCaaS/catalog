@@ -4,45 +4,45 @@
   description: "Gestión de proyectos basado en metodología ágil, como Trello, y más!!"
   uuid: taiga-0
   questions:
-    - variable: port
-      description: "Taiga frontend port"
-      label: "Port"
+    - variable: db_password 
+      description: "Database password"
+      label: "Password"
       required: true
-      default: "80"
-      type: "int"
+      default: "password"
+      type: "password"
     - variable: hostname
       description: "Taiga API endpoint"
       label: "Taiga domain or IP"
       required: true
       default: "taiga.educaas.io"
       type: "string"
-#    - variable: smtp_host
-#      description: "SMTP server"
-#      label: "SMTP host address"
-#      required: true
-#      default: "smtp.server.net"
-#      type: "string"
-#    - variable: smtp_user
-#      description: "Credentials to send mail"
-#      label: "SMTP User"
-#      required: true
-#      default: "user"
-#      type: "string"
-#    - variable: smtp_password
-#      description: "Credentials to send mail"
-#      label: "SMTP password"
-#      required: true
-#      default: "password"
-#      type: "string"
+    - variable: smtp_host
+      description: "SMTP server"
+      label: "SMTP host address"
+      required: true
+      default: "smtp.server.net"
+      type: "string"
+    - variable: smtp_user
+      description: "Credentials to send mail"
+      label: "SMTP User"
+      required: true
+      default: "user"
+      type: "string"
+    - variable: smtp_password
+      description: "Credentials to send mail"
+      label: "SMTP password"
+      required: true
+      default: "password"
+      type: "string"
     - variable: secret_key
       description: "Taiga secret key"
       label: "Secret Key"
       required: true
       default: "examplesecretkey"
       type: "string"
-#    - variable: default_email
-#      description: "Emails sent from this account"
-#      label: "Default email address"
-#      required: true
-#      default: "user@domain.com"
-#      type: "string"
+    - variable: default_email
+      description: "Emails sent from this account"
+      label: "Default email address"
+      required: true
+      default: "user@domain.com"
+      type: "string"
